@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 12:56:32 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/18 14:14:47 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/08/18 14:39:26 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int	main(void)
 	Fixed	a;
 	Fixed	b( a );
 	Fixed	c;
-	
+
 	c = b;
 
 	std::cout << a.getRawBits() << std::endl;
