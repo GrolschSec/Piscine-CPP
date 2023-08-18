@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 12:30:58 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/18 18:05:53 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/08/18 18:29:57 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,12 +27,29 @@ class Fixed
 		Fixed(float const float_val);
 		Fixed(Fixed const &fixed);
 		~Fixed();
+		static Fixed const	&min(Fixed const &a, Fixed const &b);
+		static Fixed const	&max(Fixed const &a, Fixed const &b);
+		static Fixed		&min(Fixed &a, Fixed &b);
+		static Fixed		&max(Fixed &a, Fixed &b);
 		Fixed	&operator=(Fixed const &rhs);
-		int 	getRawBits(void) const;
+		Fixed	&operator++();
+		Fixed	operator++(int);
+		Fixed	&operator--();
+		Fixed	operator--(int);
+		Fixed	operator+(Fixed const &rhs)		const;
+		Fixed	operator-(Fixed const &rhs)		const;
+		Fixed	operator*(Fixed const &rhs)		const;
+		Fixed	operator/(Fixed const &rhs)		const;
+		bool	operator<(Fixed const &rhs)		const;
+		bool	operator>(Fixed const &rhs)		const;
+		bool	operator<=(Fixed const &rhs)	const;
+		bool	operator>=(Fixed const &rhs)	const;
+		bool	operator==(Fixed const &rhs)	const;
+		bool	operator!=(Fixed const &rhs)	const;
+		int 	getRawBits(void) 				const;
+		float	toFloat(void)					const;
+		int		toInt(void)						const;
 		void	setRawBits(int const raw);
-		float	toFloat(void)	const;
-		int		toInt(void)		const;
-		friend std::ostream	&operator<<(std::ostream &os, const Fixed &fixed);
-		
+		friend	std::ostream	&operator<<(std::ostream &os, const Fixed &fixed);
 };
 #endif
