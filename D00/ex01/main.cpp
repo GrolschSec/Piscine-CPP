@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 14:27:39 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/09/27 15:52:28 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/09/27 16:27:18 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ int	main(void)
 
 	while (true)
 	{
+		if (std::cin.eof())
+			return (0);
 		std::cout << "Enter a command: (ADD, SEARCH or EXIT) ";
 		if (!std::getline(std::cin, choice))
 			return (0);
