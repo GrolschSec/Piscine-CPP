@@ -3,16 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   PhoneBook.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 14:26:20 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/17 14:05:40 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/09/27 15:52:58 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PhoneBook.hpp"
-#include <cctype>
-#include <cstdlib>
 
 PhoneBook::PhoneBook()
 {
@@ -20,7 +18,7 @@ PhoneBook::PhoneBook()
 	return ;
 }
 
-void	PhoneBook::add_contact(void)
+void	PhoneBook::add(void)
 {
 	contacts[this->index].init();
 	if (this->index + 1 > 7)
