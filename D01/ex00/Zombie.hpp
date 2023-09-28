@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 14:47:20 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/17 15:17:55 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/09/28 21:09:53 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,12 @@
 
 class Zombie
 {
-	private:
-		std::string	name;
 	public:
 		Zombie(std::string name);
 		~Zombie(void);
 		void	annonce(void);
+	private:
+		std::string	_name;
 };
 void	randomChump(std::string name);
 Zombie* newZombie(std::string name);
