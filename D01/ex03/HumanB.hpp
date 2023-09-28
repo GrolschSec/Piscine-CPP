@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 18:27:24 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/17 19:14:30 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/09/28 21:59:32 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,12 +17,12 @@
 
 class HumanB
 {
-	private:
-		std::string	name;
-		Weapon		*weapon;
 	public:
 		HumanB(std::string name);
 		void	setWeapon(Weapon &weapon);
 		void	attack(void)	const;
+	private:
+		std::string	_name;
+		Weapon		*_weapon;
 };
 #endif

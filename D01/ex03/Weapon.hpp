@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 18:15:16 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/17 18:44:36 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/09/28 21:40:20 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,11 +16,11 @@
 
 class Weapon
 {
-	private:
-		std::string	type;
 	public:
 		Weapon(std::string type);
 		std::string	getType(void) const;
 		void		setType(std::string ntype);
+	private:
+		std::string	_type;
 };
 #endif
