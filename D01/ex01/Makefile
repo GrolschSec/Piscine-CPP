@@ -6,7 +6,7 @@
 #    By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/17 16:18:25 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/09/28 21:10:40 by rlouvrie         ###   ########.fr        #
+#    Updated: 2023/09/28 21:19:04 by rlouvrie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ CPP_VERSION = -std=c++98
 
 SRCS =	main.cpp \
 		zombieHorde.cpp \
-		Zombie.cpp \
+		Zombie.cpp
 
 OBJS := ${SRCS:.cpp=.o}
 
