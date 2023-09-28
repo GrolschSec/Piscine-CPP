@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   megaphone.cpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/26 21:09:01 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/09/27 15:43:28 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/09/28 20:32:14 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(int argc, char **argv)
 		for (int i = 1; argv[i]; i++)
 			for (int j = 0; argv[i][j]; j++)
 				std::cout << (char)toupper(argv[i][j]);
+		std::cout << std::endl;
 	}
 	return (0);
 }
