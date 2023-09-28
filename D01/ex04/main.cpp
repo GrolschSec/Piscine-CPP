@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/17 20:10:40 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/17 23:43:14 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/09/28 22:32:25 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ bool	open_input(std::string name, std::ifstream *infile)
 
 bool	open_output(std::string name, std::ofstream *outfile)
 {
-	 std::string outname = name + ".replace";
+	std::string outname = name + ".replace";
 	outfile->open(outname.c_str());
 	if (!outfile->is_open())
 	{
