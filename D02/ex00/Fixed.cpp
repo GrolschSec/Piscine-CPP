@@ -6,13 +6,13 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/18 13:00:09 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/18 14:29:08 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/09/29 10:34:57 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Fixed.hpp"
 
-Fixed::Fixed() : _value(0)
+Fixed::Fixed(void) : _value(0)
 {
 	std::cout << "Default constructor called" << std::endl;
 }
