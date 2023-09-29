@@ -6,7 +6,7 @@
 #    By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 18:11:04 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/08/21 16:08:58 by rlouvrie         ###   ########.fr        #
+#    Updated: 2023/09/29 11:10:39 by rlouvrie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -32,10 +32,10 @@ OBJS := ${SRCS:.cpp=.o}
 all: $(NAME)
 
 $(NAME): ${OBJS}
-	$(CC) $(CPP_FLAGS) $(CPP_VERSION) $(OBJS) -g -o $(NAME)
+	$(CC) $(CPP_FLAGS) $(CPP_VERSION) $(OBJS) -o $(NAME)
 
 .cpp.o:
-	$(CC) $(CPP_FLAGS) $(CPP_VERSION) -g -c $< -o $@
+	$(CC) $(CPP_FLAGS) $(CPP_VERSION) -c $< -o $@
 
 clean:
 	rm -f *.o
