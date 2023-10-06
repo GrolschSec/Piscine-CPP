@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 16:17:02 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/19 16:25:23 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/06 12:06:02 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ FragTrap::FragTrap(std::string const &name) : ClapTrap(name)
 		<< std::endl;
 }
 
-FragTrap::FragTrap(FragTrap const &fragtrap) : ClapTrap()
+FragTrap::FragTrap(FragTrap const &fragtrap) : ClapTrap(fragtrap)
 {
-	*this = fragtrap;
 	std::cout
 		<< "FragTrap: constructor by copy called for "
 		<< this->_name
