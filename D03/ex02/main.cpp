@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 14:24:19 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/19 16:23:58 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/06 12:14:42 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,4 +22,5 @@ int	main(void)
 	robot1.attack("C3P0");
 	robot3.takeDamage(4);
 	robot3.beRepaired(3);
+	robot1.highFivesGuys();
 }
