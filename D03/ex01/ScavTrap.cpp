@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/19 15:28:56 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/19 16:10:03 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/06 11:57:51 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,8 @@ ScavTrap::ScavTrap(std::string const &name) : ClapTrap(name)
 		<< std::endl;
 }
 
-ScavTrap::ScavTrap(ScavTrap const &scavtrap) : ClapTrap()
+ScavTrap::ScavTrap(ScavTrap const &scavtrap) : ClapTrap(scavtrap)
 {
-	*this = scavtrap;
 	std::cout
 		<< "ScavTrap: constructor by copy called for "
 		<< this->_name
@@ -64,5 +63,21 @@ void ScavTrap::guardGate(void)
 		<< "ScavTrap: "
 		<< this->_name
 		<< " entered in gate keeper mode !"
+		<< std::endl;
+}
+
+void	ScavTrap::attack(const std::string &target)
+{
+	if (this->_hitPoints >= 1 && this->_energyPoints >= 1)
+	{
+		std::cout << "ScavTrap: " << this->_name
+			<< " attacks " << target << ", causing "
+			<< this->_attackDamage << " points of damage!"
+			<< std::endl;
+		this->_energyPoints--;
+	}
+	else
+		std::cout << this->_name
+		<< " cannot attack anymore!"
 		<< std::endl;
 }
