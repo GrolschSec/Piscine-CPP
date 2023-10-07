@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:32 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/21 14:26:54 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/07 13:15:10 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,11 +20,6 @@ int	main(void)
 	const Animal* meta = new Animal();
 	const Animal* j = new Dog();
 	const Animal* i = new Cat();
-	std::cout << std::endl;
-
-	std::cout << meta->getType() << std::endl;
-	std::cout << j->getType() << std::endl;
-	std::cout << i->getType() << std::endl;
 	std::cout << std::endl;
 
 	meta->makeSound();

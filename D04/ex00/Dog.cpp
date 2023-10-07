@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:27 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/21 13:28:25 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/07 13:13:21 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ Dog::Dog(void) : Animal("Dog")
 		<< std::endl;
 }
 
-Dog::Dog(Dog const &Dog) : Animal("Dog")
+Dog::Dog(Dog const &dog) : Animal(dog)
 {
-	*this = Dog;
 	std::cout
 		<< "Dog: constructor by copy called"
 		<< std::endl;

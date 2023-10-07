@@ -1,31 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                    :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/20 18:37:02 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/07 13:17:15 by rlouvrie         ###   ########.fr       */
+/*   Created: 2023/10/07 14:43:06 by rlouvrie          #+#    #+#             */
+/*   Updated: 2023/10/07 15:12:44 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 # include <iostream>
+# include "AMateria.hpp"
 
-class WrongAnimal
+class Ice : public AMateria
 {
-	protected:
-		std::string	_type;
 	public:
-		WrongAnimal(void);
-		WrongAnimal(std::string	const &type);
-		WrongAnimal(WrongAnimal const &wronganimal);
-		~WrongAnimal();
-		//virtual	~WrongAnimal();
-		WrongAnimal	&operator=(WrongAnimal const &rhs);
-		void		makeSound(void)	const;
-		std::string	getType(void)	const;
+		Ice(void);
+		Ice(Ice const &ice);
+		~Ice();
+		Ice				&operator=(Ice const &rhs);
+		virtual Ice*	clone(void)	const;
+		virtual void	use(ICharacter &target);
 };
 #endif

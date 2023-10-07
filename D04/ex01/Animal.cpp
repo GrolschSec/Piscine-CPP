@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:10 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/21 13:52:19 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/07 13:17:32 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ std::string Animal::getType(void) const
 void Animal::makeSound(void) const
 {
 	std::cout
-		<< "Animal: "
 		<< this->getType()
 		<< ": Moojjjjd!"
 		<< std::endl;
