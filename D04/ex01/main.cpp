@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:32 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/07 13:28:33 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/07 17:36:47 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,6 @@ int	main(void)
     for (int i = 0; i < size; ++i)
         animals[i]->makeSound();
     for (int i = 0; i < size; ++i)
-        delete animals[i];
+		delete animals[i];
     return (0);
 }
