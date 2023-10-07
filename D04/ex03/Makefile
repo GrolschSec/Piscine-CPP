@@ -6,13 +6,13 @@
 #    By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 18:11:04 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/10/07 16:50:27 by rlouvrie         ###   ########.fr        #
+#    Updated: 2023/10/07 18:07:05 by rlouvrie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = MateriaWorld
+NAME = Interface
 
 CPP_FLAGS = -Wall -Werror -Wextra
 
