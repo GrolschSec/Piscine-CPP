@@ -16,8 +16,6 @@
 
 class AAnimal
 {
-	protected:
-		std::string	_type;
 	public:
 		AAnimal(void);
 		AAnimal(std::string const &type);
@@ -26,5 +24,7 @@ class AAnimal
 		AAnimal	&operator=(AAnimal const &rhs);
 		std::string	getType(void)	const;
 		virtual void	makeSound(void)	const = 0;
+	protected:
+		std::string	_type;
 };
 #endif

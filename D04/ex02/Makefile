@@ -6,7 +6,7 @@
 #    By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 18:11:04 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/10/07 18:08:47 by rlouvrie         ###   ########.fr        #
+#    Updated: 2023/10/10 14:27:53 by rlouvrie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,6 @@ CPP_VERSION = -std=c++98
 
 SRCS =	main.cpp		\
 		AAnimal.cpp		\
-		Animal.cpp		\
 		Cat.cpp			\
 		Dog.cpp			\
 		WrongAnimal.cpp	\

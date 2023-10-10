@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 14:50:21 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/10 13:55:41 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/10 14:03:09 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,8 +52,7 @@ void Brain::setIdea(std::string idea)
 {
 	if (this->_ideas_count >= 100)
 		this->_ideas_count = 0;
-	else
-		this->ideas[this->_ideas_count++] = idea;
+	this->ideas[this->_ideas_count++] = idea;
 }
 
 std::string	Brain::getIdea(int index) const
