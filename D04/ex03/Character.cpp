@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/07 15:49:20 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/07 17:46:45 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/10 15:56:45 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -70,6 +70,8 @@ std::string const &Character::getName(void) const
 
 void Character::equip(AMateria *m)
 {
+	if (!m)
+		return ;
 	for (int i = 0; i < 4; ++i) 
 	{
 		if (!this->_inventory[i])
