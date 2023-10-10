@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:27 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/21 15:13:18 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/07 20:04:30 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ Dog::Dog(void) : Animal("Dog"), _brain(new Brain())
 		<< std::endl;
 }
 
-Dog::Dog(Dog const &dog) : Animal("Dog")
+Dog::Dog(Dog const &dog) : Animal(dog), _brain(new Brain(*dog._brain))
 {
-	*this = dog;
 	std::cout
 		<< "Dog: constructor by copy called"
 		<< std::endl;
@@ -29,10 +28,10 @@ Dog::Dog(Dog const &dog) : Animal("Dog")
 
 Dog::~Dog()
 {
-	delete this->_brain;
 	std::cout
 		<< "Dog: destructor called"
 		<< std::endl;
+	delete this->_brain;
 }
 
 Dog &Dog::operator=(Dog const &rhs)
@@ -52,3 +51,19 @@ void Dog::makeSound(void) const
 		<< "Woof!"
 		<< std::endl;
 }
+
+void Dog::setBrainIdea(const std::string &idea)
+{
+	this->_brain->setIdea(idea);
+}
+
+std::string	Dog::getBrainIdea(int index) const
+{
+	return (this->_brain->getIdea(index));
+}
+
+const Brain	*Dog::getBrainPtr(void)	const
+{
+	return (this->_brain->getPtr());
+}
+

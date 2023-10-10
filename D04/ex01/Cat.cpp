@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:21 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/07 13:18:22 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/07 20:04:37 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ Cat::Cat(void) : Animal("Cat"), _brain(new Brain())
 		<< std::endl;
 }
 
-Cat::Cat(Cat const &cat) : Animal("Cat")
+Cat::Cat(Cat const &cat) : Animal(cat), _brain(new Brain(*cat._brain))
 {
-	*this = cat;
 	std::cout
 		<< "Cat: constructor by copy called"
 		<< std::endl;
@@ -29,10 +28,10 @@ Cat::Cat(Cat const &cat) : Animal("Cat")
 
 Cat::~Cat()
 {
-	delete this->_brain;
 	std::cout
 		<< "Cat: destructor called"
 		<< std::endl;
+	delete this->_brain;
 }
 
 Cat &Cat::operator=(Cat const &rhs)
@@ -51,4 +50,19 @@ void Cat::makeSound(void) const
 		<< "Cat: "
 		<< "Meoow!"
 		<< std::endl;
+}
+
+void Cat::setBrainIdea(const std::string &idea)
+{
+	this->_brain->setIdea(idea);
+}
+
+std::string	Cat::getBrainIdea(int index) const
+{
+	return (this->_brain->getIdea(index));
+}
+
+const Brain	*Cat::getBrainPtr(void)	const
+{
+	return (this->_brain->getPtr());
 }

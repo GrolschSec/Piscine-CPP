@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:32 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/07 17:36:47 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/10 13:51:02 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,16 +17,52 @@
 
 int	main(void)
 {
-	int		size = 100;
-    Animal* animals[size];
+	Dog *d0 = new Dog;
+	Cat	*c0 = new Cat;
 
-    for (int i = 0; i < size / 2; ++i)
-		animals[i] = new Dog();
-    for (int i = size / 2; i < size; ++i)
-        animals[i] = new Cat();
-    for (int i = 0; i < size; ++i)
-        animals[i]->makeSound();
-    for (int i = 0; i < size; ++i)
-		delete animals[i];
+	d0->setBrainIdea("Dog: First Idea.");
+	d0->setBrainIdea("Dog: Second Idea.");
+	
+	c0->setBrainIdea("Cat: Fisrt Idea.");
+	c0->setBrainIdea("Cat: Second Idea.");
+	
+	Dog *d1 = new Dog(*d0);
+	Cat *c1 = new Cat(*c0);
+	std::cout << std::endl;
+
+	/* DOG 0 */
+	std::cout << "d0 BrainIdea: " << d0->getBrainIdea(0) << std::endl;
+	std::cout << "d0 BrainPTR: " << d0->getBrainPtr() << std::endl;
+	std::cout << std::endl;
+
+	/* DOG 1 */
+	std::cout << "d1 BrainIdea: " << d1->getBrainIdea(0) << std::endl;
+	std::cout << "d1 BrainPTR: " << d1->getBrainPtr() << std::endl;
+	std::cout << std::endl;
+
+	/* CAT 0 */
+	std::cout << "c0 BrainIdea: " << c0->getBrainIdea(1) << std::endl;
+	std::cout << "c0 BrainPTR: " << c0->getBrainPtr() << std::endl;
+	std::cout << std::endl;
+
+	/* CAT 1 */
+	std::cout << "c1 BrainIdea: " << c1->getBrainIdea(1) << std::endl;
+	std::cout << "c1 BrainPTR: " << c1->getBrainPtr() << std::endl;
+	std::cout << std::endl;
+
+	Cat *c2 = new Cat(*c0);
+	c2->setBrainIdea("Cat: here is the third idea.");
+	std::cout << "c2 BrainIdea: " << c2->getBrainIdea(2) << std::endl;
+	std::cout << "c2 BrainPTR: " << c2->getBrainPtr() << std::endl;
+	std::cout << std::endl;
+	
+	delete d0;
+	delete c0;
+	
+	delete d1;
+	delete c1;
+
+	delete c2;
+
     return (0);
 }
