@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:27 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/07 20:04:30 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/10 14:11:02 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,4 +66,3 @@ const Brain	*Dog::getBrainPtr(void)	const
 {
 	return (this->_brain->getPtr());
 }
-
