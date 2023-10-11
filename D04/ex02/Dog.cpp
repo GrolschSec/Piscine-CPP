@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:27 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/10 14:10:55 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/11 10:30:34 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,8 @@ Dog &Dog::operator=(Dog const &rhs)
 	if (this != &rhs)
 	{
 		AAnimal::operator=(rhs);
+		if (this->_brain)
+			delete this->_brain;
 		this->_brain = new Brain(*(rhs._brain));
 	}
 	return (*this);

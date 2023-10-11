@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:32 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/10 13:51:02 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/11 10:33:50 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,17 @@
 
 int	main(void)
 {
+
+	int		n = 100;
+	Animal*	animals[n];
+
+	for (int i = 0; i < n / 2; i++)
+		animals[i] = new Dog;
+	for (int i = n / 2; i < n; i++)
+		animals[i] = new Cat;
+	for (int i = 0; i < n; i++)
+		delete animals[i];
+	
 	Dog *d0 = new Dog;
 	Cat	*c0 = new Cat;
 
