@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:04:02 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/24 10:28:33 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/24 10:35:39 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,7 @@
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade)
 	:
-	_name(name),
-	_grade(150)
+	_name(name)
 {
 	if (grade > 150)
 		throw Bureaucrat::GradeTooLowException();
