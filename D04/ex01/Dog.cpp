@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:27 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/21 15:13:18 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/06 17:24:58 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Dog &Dog::operator=(Dog const &rhs)
 void Dog::makeSound(void) const
 {
 	std::cout
-		<< "Dog: "
-		<< "Woof!"
+		<< this->getType()
+		<< ": Woof!"
 		<< std::endl;
 }

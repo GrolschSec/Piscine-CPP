@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:32 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/21 14:26:54 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/06 17:15:24 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,11 +22,6 @@ int	main(void)
 	const Animal* i = new Cat();
 	std::cout << std::endl;
 
-	std::cout << meta->getType() << std::endl;
-	std::cout << j->getType() << std::endl;
-	std::cout << i->getType() << std::endl;
-	std::cout << std::endl;
-
 	meta->makeSound();
 	j->makeSound();
 	i->makeSound();
@@ -38,11 +33,7 @@ int	main(void)
 	std::cout << std::endl;
 
 	const WrongCat*	ocat = new WrongCat();
-	const WrongAnimal* wcat = new WrongCat();
-	std::cout << std::endl;
-
-	std::cout << ocat->getType() << std::endl;
-	std::cout << wcat->getType() << std::endl;
+	const WrongAnimal*	wcat = new WrongCat();
 	std::cout << std::endl;
 	
 	ocat->makeSound();

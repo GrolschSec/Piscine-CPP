@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongCat.cpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:37:32 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/21 14:21:32 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:35:05 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ WrongCat::WrongCat(void) : WrongAnimal("WrongCat")
 		<< std::endl;
 }
 
-WrongCat::WrongCat(WrongCat const &wrongcat) : WrongAnimal()
+WrongCat::WrongCat(WrongCat const &wrongcat) : WrongAnimal(wrongcat)
 {
-	*this = wrongcat;
 	std::cout
 		<< "WrongCat: constructor called"
 		<< std::endl;
@@ -44,6 +43,7 @@ WrongCat &WrongCat::operator=(WrongCat const &rhs)
 void WrongCat::makeSound(void) const
 {
 	std::cout
-		<< "WrongCat: Meooooow Meooooooow !"
+		<< this->getType()
+		<< ": Meooooow Meooooooow !"
 		<< std::endl;
 }

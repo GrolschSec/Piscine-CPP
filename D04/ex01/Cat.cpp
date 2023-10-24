@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:21 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/21 15:10:17 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/06 17:24:38 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ Cat &Cat::operator=(Cat const &rhs)
 void Cat::makeSound(void) const
 {
 	std::cout
-		<< "Cat: "
-		<< "Meoow!"
+		<< this->getType()
+		<< ": Meoow!"
 		<< std::endl;
 }

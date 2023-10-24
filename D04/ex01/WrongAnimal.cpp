@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   WrongAnimal.cpp                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/21 13:58:53 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/21 14:21:39 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/06 18:07:07 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,7 +55,6 @@ WrongAnimal &WrongAnimal::operator=(WrongAnimal const &rhs)
 void WrongAnimal::makeSound(void) const
 {
 	std::cout
-		<< "WrongAnimal: "
 		<< this->getType()
 		<< ": Moojjjjd!"
 		<< std::endl;

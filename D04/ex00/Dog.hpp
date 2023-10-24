@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:30 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/21 13:34:31 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:24:52 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,6 +23,5 @@ class Dog : public Animal
 		~Dog();
 		Dog	&operator=(Dog const &rhs);
 		virtual void	makeSound(void)	const;
-		
 };
 #endif

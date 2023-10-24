@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Cat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:21 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/21 13:26:20 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/06 16:27:31 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ Cat::Cat(void) : Animal("Cat")
 		<< std::endl;
 }
 
-Cat::Cat(Cat const &cat) : Animal("Cat")
+Cat::Cat(Cat const &cat) : Animal(cat)
 {
-	*this = cat;
 	std::cout
 		<< "Cat: constructor by copy called"
 		<< std::endl;
@@ -44,7 +43,7 @@ Cat &Cat::operator=(Cat const &rhs)
 void Cat::makeSound(void) const
 {
 	std::cout
-		<< "Cat: "
-		<< "Meoow!"
+		<< this->getType()
+		<< ": Meoow!"
 		<< std::endl;
 }
