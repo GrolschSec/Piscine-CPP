@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/20 18:11:27 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/08/21 16:01:03 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/11 10:30:34 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,9 +19,8 @@ Dog::Dog(void) : AAnimal("Dog"), _brain(new Brain())
 		<< std::endl;
 }
 
-Dog::Dog(Dog const &dog) : AAnimal("Dog")
+Dog::Dog(Dog const &dog) : AAnimal("Dog"), _brain(new Brain(*dog._brain))
 {
-	*this = dog;
 	std::cout
 		<< "Dog: constructor by copy called"
 		<< std::endl;
@@ -29,10 +28,10 @@ Dog::Dog(Dog const &dog) : AAnimal("Dog")
 
 Dog::~Dog()
 {
-	delete this->_brain;
 	std::cout
 		<< "Dog: destructor called"
 		<< std::endl;
+	delete this->_brain;
 }
 
 Dog &Dog::operator=(Dog const &rhs)
@@ -40,6 +39,8 @@ Dog &Dog::operator=(Dog const &rhs)
 	if (this != &rhs)
 	{
 		AAnimal::operator=(rhs);
+		if (this->_brain)
+			delete this->_brain;
 		this->_brain = new Brain(*(rhs._brain));
 	}
 	return (*this);
@@ -51,4 +52,19 @@ void Dog::makeSound(void) const
 		<< "Dog: "
 		<< "Woof!"
 		<< std::endl;
+}
+
+void Dog::setBrainIdea(const std::string &idea)
+{
+	this->_brain->setIdea(idea);
+}
+
+std::string	Dog::getBrainIdea(int index) const
+{
+	return (this->_brain->getIdea(index));
+}
+
+const Brain	*Dog::getBrainPtr(void)	const
+{
+	return (this->_brain->getPtr());
 }

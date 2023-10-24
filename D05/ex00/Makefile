@@ -5,26 +5,21 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/08/20 18:11:04 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/10/10 14:27:53 by rlouvrie         ###   ########.fr        #
+#    Created: 2023/10/24 09:02:31 by rlouvrie          #+#    #+#              #
+#    Updated: 2023/10/24 09:04:22 by rlouvrie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = Abstract
+NAME = Exceptions
 
 CPP_FLAGS = -Wall -Werror -Wextra
 
 CPP_VERSION = -std=c++98
 
-SRCS =	main.cpp		\
-		AAnimal.cpp		\
-		Cat.cpp			\
-		Dog.cpp			\
-		WrongAnimal.cpp	\
-		WrongCat.cpp	\
-		Brain.cpp
+SRCS =	main.cpp	\
+		Bureaucrat.cpp	
 
 OBJS := ${SRCS:.cpp=.o}
 

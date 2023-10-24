@@ -1,33 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.hpp                                            :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/20 18:11:24 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/07 20:04:00 by rlouvrie         ###   ########.fr       */
+/*   Created: 2023/10/07 15:12:55 by rlouvrie          #+#    #+#             */
+/*   Updated: 2023/10/07 17:02:57 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CAT_HPP
-# define CAT_HPP
-# include <iostream>
-# include "Animal.hpp"
-# include "Brain.hpp"
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
+# include "IMateriaSource.hpp"
 
-class Cat : public Animal
+class MateriaSource : public IMateriaSource
 {
 	public:
-		Cat(void);
-		Cat(Cat const &cat);
-		~Cat();
-		Cat	&operator=(Cat const &rhs);
-		virtual void	makeSound(void)	const;
-		void			setBrainIdea(const std::string &idea);
-		std::string		getBrainIdea(int index)	const;
-		const Brain			*getBrainPtr(void)	const;
+		MateriaSource(void);
+		MateriaSource(MateriaSource const &materia);
+		virtual ~MateriaSource();
+		MateriaSource		&operator=(MateriaSource const &rhs);
+
+		virtual void		learnMateria(AMateria *m);
+		virtual AMateria	*createMateria(std::string const &type);
+
 	private:
-		Brain	*_brain;
+		AMateria	*_materia[4];
 };
 #endif

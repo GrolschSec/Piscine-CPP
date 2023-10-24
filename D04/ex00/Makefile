@@ -6,13 +6,13 @@
 #    By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 18:11:04 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/09/29 11:10:16 by rlouvrie         ###   ########.fr        #
+#    Updated: 2023/10/07 18:11:02 by rlouvrie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = AnimalCrossing
+NAME = Polymorphism
 
 CPP_FLAGS = -Wall -Werror -Wextra
 
