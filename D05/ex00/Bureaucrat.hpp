@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:04:06 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/24 10:09:49 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/24 10:24:55 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,8 @@ class Bureaucrat
 		~Bureaucrat();
 		std::string	getName(void)	const;
 		int			getGrade(void)	const;
-		void		incrementGrade(int up);
-		void		decrementGrade(int down);
+		void		incrementGrade(void);
+		void		decrementGrade(void);
 		class GradeTooLowException : public std::exception
 		{
 			public:
