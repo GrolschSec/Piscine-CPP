@@ -6,41 +6,23 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/24 09:03:10 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/24 10:32:42 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/10/25 10:18:00 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+#include "Form.hpp"
 
 int	main(void)
 {
     try {
-        Bureaucrat bob("Bob", 151);
-    }
-    catch (Bureaucrat::GradeTooHighException &e) {
-        std::cerr << "Exception caught: " << e.what();
-    }
-    catch (Bureaucrat::GradeTooLowException &e) {
-        std::cerr << "Exception caught: " << e.what();
-    }
-    try {
-        Bureaucrat alice("Alice", 0);
-    }
-    catch (Bureaucrat::GradeTooHighException &e) {
-        std::cerr << "Exception caught: " << e.what();
-    }
-    catch (Bureaucrat::GradeTooLowException &e) {
-        std::cerr << "Exception caught: " << e.what();
-    }
-
-    try {
-        Bureaucrat charlie("Charlie", 100);
+        Bureaucrat	charlie("Charlie", 100);
+		Form		f1("test", 60, -1);
         std::cout << charlie;
+		charlie.signForm(f1);
+		charlie.signForm(f1);
     }
-    catch (Bureaucrat::GradeTooHighException &e) {
-        std::cerr << "Exception caught: " << e.what();
-    }
-    catch (Bureaucrat::GradeTooLowException &e) {
+    catch (std::exception &e) {
         std::cerr << "Exception caught: " << e.what();
     }
     return (0);
