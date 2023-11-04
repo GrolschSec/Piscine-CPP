@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 09:03:10 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/24 10:32:42 by rlouvrie         ###   ########.fr       */
+/*   Created: 2023/11/04 09:50:43 by rlouvrie          #+#    #+#             */
+/*   Updated: 2023/11/04 10:56:31 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,34 +14,18 @@
 
 int	main(void)
 {
-    try {
-        Bureaucrat bob("Bob", 151);
-    }
-    catch (Bureaucrat::GradeTooHighException &e) {
-        std::cerr << "Exception caught: " << e.what();
-    }
-    catch (Bureaucrat::GradeTooLowException &e) {
-        std::cerr << "Exception caught: " << e.what();
-    }
-    try {
-        Bureaucrat alice("Alice", 0);
-    }
-    catch (Bureaucrat::GradeTooHighException &e) {
-        std::cerr << "Exception caught: " << e.what();
-    }
-    catch (Bureaucrat::GradeTooLowException &e) {
-        std::cerr << "Exception caught: " << e.what();
-    }
-
-    try {
-        Bureaucrat charlie("Charlie", 100);
-        std::cout << charlie;
-    }
-    catch (Bureaucrat::GradeTooHighException &e) {
-        std::cerr << "Exception caught: " << e.what();
-    }
-    catch (Bureaucrat::GradeTooLowException &e) {
-        std::cerr << "Exception caught: " << e.what();
-    }
-    return (0);
+	try {
+		Bureaucrat test1("Arthur", 1);
+		std::cout << test1;
+	}
+	catch (const Bureaucrat::GradeTooHighException &e) {
+		std::cerr << "Exception caught: " << e.what() << std::endl;
+	}
+	catch (const Bureaucrat::GradeTooLowException &e) {
+		std::cerr << "Exception caught: " << e.what() << std::endl;
+	}
+	catch (const std::exception &e) {
+		std::cerr << "Standard exception caught: " << e.what() << std::endl;
+	}
+	return (0);
 }

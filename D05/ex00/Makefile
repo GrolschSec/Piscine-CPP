@@ -5,8 +5,8 @@
 #                                                     +:+ +:+         +:+      #
 #    By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/24 09:02:31 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/10/24 09:04:22 by rlouvrie         ###   ########.fr        #
+#    Created: 2023/08/20 18:11:04 by rlouvrie          #+#    #+#              #
+#    Updated: 2023/11/04 09:50:22 by rlouvrie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,8 +18,8 @@ CPP_FLAGS = -Wall -Werror -Wextra
 
 CPP_VERSION = -std=c++98
 
-SRCS =	main.cpp	\
-		Bureaucrat.cpp	
+SRCS =	main.cpp		\
+		Bureaucrat.cpp
 
 OBJS := ${SRCS:.cpp=.o}
 
