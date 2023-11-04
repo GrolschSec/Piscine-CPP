@@ -5,8 +5,8 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/10/24 09:03:10 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/10/25 10:18:00 by rlouvrie         ###   ########.fr       */
+/*   Created: 2023/11/04 09:50:43 by rlouvrie          #+#    #+#             */
+/*   Updated: 2023/11/04 14:59:21 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,15 +15,19 @@
 
 int	main(void)
 {
-    try {
-        Bureaucrat	charlie("Charlie", 100);
-		Form		f1("test", 60, -1);
-        std::cout << charlie;
-		charlie.signForm(f1);
-		charlie.signForm(f1);
-    }
-    catch (std::exception &e) {
-        std::cerr << "Exception caught: " << e.what();
-    }
-    return (0);
+	try {
+		Bureaucrat	test1("Arthur", 30);
+		Form		test(30, 30, "Admission");
+		test1.signForm(test);
+	}
+	catch (const Bureaucrat::GradeTooHighException &e) {
+		std::cerr << "Exception caught: " << e.what() << std::endl;
+	}
+	catch (const Bureaucrat::GradeTooLowException &e) {
+		std::cerr << "Exception caught: " << e.what() << std::endl;
+	}
+	catch (const std::exception &e) {
+		std::cerr << "Standard exception caught: " << e.what() << std::endl;
+	}
+	return (0);
 }

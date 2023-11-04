@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+         #
+#    By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/10/24 09:02:31 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/10/24 17:26:28 by rlouvrie         ###   ########.fr        #
+#    Created: 2023/08/20 18:11:04 by rlouvrie          #+#    #+#              #
+#    Updated: 2023/11/04 15:03:39 by rlouvrie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
