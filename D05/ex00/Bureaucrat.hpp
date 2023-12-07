@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 09:50:47 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/11/04 10:55:56 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/12/07 15:08:30 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,18 +28,12 @@ class Bureaucrat
 		class GradeTooHighException : public std::exception 
 		{
 			public:
-				const char* what() const throw() 
-				{
-					return "Grade is too high";
-				}
+				const char* what() const throw();
 		};
 		class GradeTooLowException : public std::exception
 		{
 			public:
-				const char* what() const throw()
-				{
-					return "Grade is too low";
-				}
+				const char* what() const throw();
 		};
 	private:
 		const std::string		_name;
