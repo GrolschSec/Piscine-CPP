@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 18:02:06 by romain            #+#    #+#             */
-/*   Updated: 2023/12/08 18:24:18 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/08 19:05:48 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ int	main(void) {
 
 		std::cout << f1;
 		tom.signForm(f1);
+		tom.signForm(f2);
 		tom.signForm(f2);
 	}
 	catch (std::exception &e) {

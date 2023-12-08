@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 09:55:24 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/12/08 18:23:11 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/08 19:06:34 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -67,7 +67,7 @@ void	Bureaucrat::signForm(Form &form) {
 			<< form.getName()
 			<< std::endl;
 	}
-	catch (Form::GradeTooLowException &e) {
+	catch (std::exception &e) {
 		std::cout
 			<< this->getName()
 			<< " couldn't sign "

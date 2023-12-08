@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:41:32 by romain            #+#    #+#             */
-/*   Updated: 2023/12/08 18:23:28 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/08 19:16:12 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ int		Form::getEGrade(void)	const {
 /******************************************************************************/
 
 void	Form::beSigned(const Bureaucrat &bureaucrat) {
+	if (this->isSigned())
+		throw Form::FormAlreadySignedException();
 	if (bureaucrat.getGrade() > this->getSGrade())
 		throw Form::GradeTooLowException();
 	else
@@ -69,6 +71,10 @@ const char* Form::GradeTooHighException::what() const throw() {
 
 const char* Form::GradeTooLowException::what()	const throw() {
 	return ("Form: Grade is too low");
+}
+
+const char*	Form::FormAlreadySignedException::what()		const throw() {
+	return ("Form: Form is already signed");
 }
 
 /******************************************************************************/

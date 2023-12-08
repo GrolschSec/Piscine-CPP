@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 16:41:27 by romain            #+#    #+#             */
-/*   Updated: 2023/12/08 18:30:04 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/08 19:15:57 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,11 @@ class Form {
 		class GradeTooLowException : public std::exception {
 			public:
 				const char* what() const throw();
-		};  
+		};
+		class FormAlreadySignedException : public std::exception {
+			public:
+				const char* what() const throw();
+		};
     private:
         const std::string   _name;
         bool                _signed;
