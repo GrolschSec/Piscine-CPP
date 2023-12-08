@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+         #
+#    By: romain <romain@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 18:11:04 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/11/04 09:50:22 by rlouvrie         ###   ########.fr        #
+#    Updated: 2023/12/08 17:49:54 by romain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,8 @@ CPP_FLAGS = -Wall -Werror -Wextra
 CPP_VERSION = -std=c++98
 
 SRCS =	main.cpp		\
-		Bureaucrat.cpp
+		Bureaucrat.cpp	\
+		Form.cpp
 
 OBJS := ${SRCS:.cpp=.o}
 

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 09:55:24 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/12/07 15:12:17 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:23:11 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,14 +58,34 @@ void	Bureaucrat::decrement(void) {
 	this->_grade++;
 }
 
+void	Bureaucrat::signForm(Form &form) {
+	try {
+		form.beSigned(*this);
+		std::cout
+			<< this->getName()
+			<< " signed "
+			<< form.getName()
+			<< std::endl;
+	}
+	catch (Form::GradeTooLowException &e) {
+		std::cout
+			<< this->getName()
+			<< " couldn't sign "
+			<< form.getName()
+			<< " because "
+			<< e.what()
+			<< std::endl;
+	}
+}
+
 /******************************************************************************/
 
 const char*	Bureaucrat::GradeTooLowException::what() const throw() {
-	return "Grade is too low";
+	return "Bureaucrat: Grade is too low";
 }
 
 const char* Bureaucrat::GradeTooHighException::what() const throw() {
-	return "Grade is too high";
+	return "Bureaucrat: Grade is too high";
 }
 
 /******************************************************************************/

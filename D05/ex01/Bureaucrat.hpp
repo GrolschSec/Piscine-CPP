@@ -3,16 +3,19 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 09:50:47 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/12/07 15:08:30 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:30:15 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef BUREAUCRAT_HPP
 # define BUREAUCRAT_HPP
 # include <iostream>
+# include "Form.hpp"
+
+class	Form;
 
 class Bureaucrat
 {
@@ -25,13 +28,12 @@ class Bureaucrat
 		int					getGrade(void)	const;
 		void				increment(void);
 		void				decrement(void);
-		class GradeTooHighException : public std::exception 
-		{
+		void				signForm(Form &form);
+		class GradeTooHighException : public std::exception {
 			public:
 				const char* what() const throw();
 		};
-		class GradeTooLowException : public std::exception
-		{
+		class GradeTooLowException : public std::exception {
 			public:
 				const char* what() const throw();
 		};
