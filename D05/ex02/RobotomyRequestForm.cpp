@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 20:25:06 by romain            #+#    #+#             */
-/*   Updated: 2023/12/08 20:29:56 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/08 22:07:52 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,21 @@ RobotomyRequestForm::~RobotomyRequestForm() {}
 
 /******************************************************************************/
 
-void	RobotomyRequestForm::executeAction(Bureaucrat const & executor) {
-	
+void	RobotomyRequestForm::executeAction(Bureaucrat const & executor) const {
+	execute(executor);
+	std::cout 
+		<< "*ZzzzZzzzZzzzZzzzZzzzZzzzZzzzZzzz*" 
+		<< std::endl;
+	std::srand(std::time(0));
+	if (std::rand() % 2 == 0) {
+		std::cout 
+			<< this->getTarget() 
+			<< " has been robotomized!" 
+			<< std::endl;
+	} else {
+		std::cout 
+			<< this->getTarget() 
+			<< " robotomization has failed!" 
+			<< std::endl;
+	}
 }

@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 20:30:09 by romain            #+#    #+#             */
-/*   Updated: 2023/12/08 21:00:31 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/08 21:43:15 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,21 +33,9 @@ PresidentialPardonForm::~PresidentialPardonForm() {}
 
 /******************************************************************************/
 
-void	PresidentialPardonForm::executeAction(Bureaucrat const & executor) {
+void	PresidentialPardonForm::executeAction(Bureaucrat const & executor) const {
 	execute(executor);
-	std::ofstream	file((this->getTarget() + "_shrubbery").c_str());
-
-	if (!file)
-		throw std::ofstream::failure();
-	file         
-		<< "		t			  t\n"
-		<< "       .#.			 .#.\n"
-		<< "      .###.		    .###.\n"
-		<< "     .#%##%.	   .#%##%.\n"
-		<< "    .%##%###.	  .%##%###.\n"
-		<< "   .##%###%##. 	 .##%###%##.\n"
-		<< "  .#%###%##%##.	.#%###%##%##.\n"
-		<< "        #			  #\n"
-		<< "        #			  #"
-		<< std::endl;
+	std::cout
+		<< this->getTarget()
+		<< " has been pardoned by Zaphod Beeblebrox.\n";
 }

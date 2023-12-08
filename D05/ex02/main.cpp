@@ -3,31 +3,28 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 09:50:43 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/11/06 11:29:23 by rlouvrie         ###   ########.fr       */
+/*   Created: 2023/12/08 18:02:06 by romain            #+#    #+#             */
+/*   Updated: 2023/12/08 22:29:34 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
-#include "AForm.hpp"
+#include "ShrubberyCreationForm.hpp"
+#include "PresidentialPardonForm.hpp"
+#include "RobotomyRequestForm.hpp"
 
-int	main(void)
-{
-	try {
-		Bureaucrat	test1("Arthur", 30);
-		AForm		test(30, 30, "Admission");
-		test1.signForm(test);
-	}
-	catch (const Bureaucrat::GradeTooHighException &e) {
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
-	catch (const Bureaucrat::GradeTooLowException &e) {
-		std::cerr << "Exception caught: " << e.what() << std::endl;
-	}
-	catch (const std::exception &e) {
-		std::cerr << "Standard exception caught: " << e.what() << std::endl;
-	}
-	return (0);
+int	main(void) {
+	Bureaucrat				tom("tom", 5);
+	ShrubberyCreationForm	f1;
+	PresidentialPardonForm	f2;
+	RobotomyRequestForm		f3;
+
+	tom.signForm(f1);
+	tom.executeForm(f1);
+	tom.executeForm(f2);
+	tom.signForm(f3);
+	tom.executeForm(f3);
+	
 }

@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 09:55:24 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/12/08 19:07:21 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/08 22:27:48 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,7 @@ Bureaucrat::~Bureaucrat() {}
 
 /******************************************************************************/
 
-const std::string	&Bureaucrat::getName(void)	const {
+std::string	Bureaucrat::getName(void)	const {
 	return (this->_name);
 }
 
@@ -68,9 +68,29 @@ void	Bureaucrat::signForm(AForm &form) {
 			<< std::endl;
 	}
 	catch (std::exception &e) {
-		std::cout
+		std::cerr
 			<< this->getName()
 			<< " couldn't sign "
+			<< form.getName()
+			<< " because "
+			<< e.what()
+			<< std::endl;
+	}
+}
+
+void	Bureaucrat::executeForm(AForm const & form) {
+	try {
+		form.executeAction(*this);
+		std::cout
+			<< this->getName()
+			<< " executed "
+			<< form.getName()
+			<< std::endl;
+	}
+	catch (std::exception &e) {
+		std::cerr
+			<< this->getName()
+			<< " couldn't execute "
 			<< form.getName()
 			<< " because "
 			<< e.what()
