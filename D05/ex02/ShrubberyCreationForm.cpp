@@ -3,29 +3,35 @@
 /*                                                        :::      ::::::::   */
 /*   ShrubberyCreationForm.cpp                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 11:40:36 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/11/06 13:02:25 by rlouvrie         ###   ########.fr       */
+/*   Created: 2023/12/08 20:15:51 by romain            #+#    #+#             */
+/*   Updated: 2023/12/08 20:25:25 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ShrubberyCreationForm.hpp"
 
-ShrubberyCreationForm::ShrubberyCreationForm(void) 
-	: 
-	AForm(145, 137, "ShrubberyCreation")
-{}
+/******************************************************************************/
 
-ShrubberyCreationForm::ShrubberyCreationForm(ShrubberyCreationForm const &cp)
-	:
-	AForm(cp)
-{}
+ShrubberyCreationForm::ShrubberyCreationForm(void)
+	: AForm("ShrubberyCreationForm", "Unknown", 145, 137) {}
 
-ShrubberyCreationForm	&ShrubberyCreationForm::operator=(ShrubberyCreationForm const &rhs)
-{
+ShrubberyCreationForm::ShrubberyCreationForm(const std::string &target)
+	: AForm("ShrubberyCreationForm", target, 145, 137) {}
+
+ShrubberyCreationForm::ShrubberyCreationForm(const ShrubberyCreationForm &cp)
+	: AForm(cp) {}
+
+ShrubberyCreationForm	&ShrubberyCreationForm::operator=(const ShrubberyCreationForm &rhs) {
 	AForm::operator=(rhs);
 	return (*this);
 }
 
 ShrubberyCreationForm::~ShrubberyCreationForm() {}
+
+/******************************************************************************/
+
+void	ShrubberyCreationForm::executeAction(Bureaucrat const &executor) {
+	
+}

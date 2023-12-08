@@ -3,29 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 11:40:30 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/11/06 13:00:21 by rlouvrie         ###   ########.fr       */
+/*   Created: 2023/12/08 20:25:06 by romain            #+#    #+#             */
+/*   Updated: 2023/12/08 20:29:56 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "RobotomyRequestForm.hpp"
 
-RobotomyRequestForm::RobotomyRequestForm(void) 
-	: 
-	AForm(72, 45, "RobotomyRequest")
-{}
+/******************************************************************************/
 
-RobotomyRequestForm::RobotomyRequestForm(RobotomyRequestForm const &cp)
-	:
-	AForm(cp)
-{}
+RobotomyRequestForm::RobotomyRequestForm(void)
+	: AForm("RobotomyRequestForm", "Unknown", 72, 45) {}
 
-RobotomyRequestForm	&RobotomyRequestForm::operator=(RobotomyRequestForm const &rhs)
+RobotomyRequestForm::RobotomyRequestForm(const std::string &target)
+	: AForm("RobotomyRequestForm", target, 72, 45) {}
+
+RobotomyRequestForm::RobotomyRequestForm(const RobotomyRequestForm &cp)
+	: AForm(cp) {}
+
+RobotomyRequestForm	&RobotomyRequestForm::operator=(const RobotomyRequestForm &rhs)
 {
 	AForm::operator=(rhs);
 	return (*this);
 }
 
 RobotomyRequestForm::~RobotomyRequestForm() {}
+
+/******************************************************************************/
+
+void	RobotomyRequestForm::executeAction(Bureaucrat const & executor) {
+	
+}

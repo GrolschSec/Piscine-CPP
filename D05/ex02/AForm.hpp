@@ -19,7 +19,7 @@ class Bureaucrat;
 
 class AForm {
     public:
-        AForm(std::string name, int s_grade, int e_grade);
+        AForm(std::string name, std::string target, int s_grade, int e_grade);
         AForm(const AForm &cp);
         AForm    &operator=(const AForm &rhs);    
         virtual ~AForm();

@@ -14,8 +14,9 @@
 
 /******************************************************************************/
 
-AForm::AForm(std::string name, int s_grade, int e_grade)
-    : _name(name), _signed(false), _s_grade(s_grade), _e_grade(e_grade) {
+AForm::AForm(std::string name, std::string target, int s_grade, int e_grade)
+    : _name(name), _target(target), 
+	_signed(false), _s_grade(s_grade), _e_grade(e_grade) {
     if (this->_s_grade < 1 || this->_e_grade < 1)
 		throw AForm::GradeTooHighException();
 	else if (this->_s_grade > 150 || this->_e_grade > 150)
@@ -23,7 +24,7 @@ AForm::AForm(std::string name, int s_grade, int e_grade)
 }
 
 AForm::AForm(const AForm &cp) 
-	: _name(cp.getName()), _signed(false), 
+	: _name(cp.getName()), _target(cp.getTarget()), _signed(false), 
 	_s_grade(cp.getSGrade()), _e_grade(cp.getEGrade()) 
 {}
 

@@ -3,29 +3,36 @@
 /*                                                        :::      ::::::::   */
 /*   PresidentialPardonForm.cpp                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/06 11:40:23 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/11/06 12:54:08 by rlouvrie         ###   ########.fr       */
+/*   Created: 2023/12/08 20:30:09 by romain            #+#    #+#             */
+/*   Updated: 2023/12/08 20:33:51 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "PresidentialPardonForm.hpp"
 
-PresidentialPardonForm::PresidentialPardonForm(void) 
-	: 
-	AForm(25, 5, "PresidentialPardon")
-{}
+/******************************************************************************/
 
-PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm const &cp)
-	:
-	AForm(cp)
-{}
+PresidentialPardonForm::PresidentialPardonForm(void)
+	: AForm("PresidentialPardonForm", "Unknown", 25, 5) {}
 
-PresidentialPardonForm	&PresidentialPardonForm::operator=(PresidentialPardonForm const &rhs)
+PresidentialPardonForm::PresidentialPardonForm(const std::string &target)
+	: AForm("PresidentialPardonForm", target, 25, 5) {}
+
+PresidentialPardonForm::PresidentialPardonForm(const PresidentialPardonForm &cp)
+	: AForm(cp) {}
+
+PresidentialPardonForm	&PresidentialPardonForm::operator=(const PresidentialPardonForm &rhs)
 {
 	AForm::operator=(rhs);
 	return (*this);
 }
 
 PresidentialPardonForm::~PresidentialPardonForm() {}
+
+/******************************************************************************/
+
+void	PresidentialPardonForm::executeAction(Bureaucrat const & executor) {
+	
+}
