@@ -3,55 +3,55 @@
 /*                                                        :::      ::::::::   */
 /*   AForm.hpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/11/04 11:06:06 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/11/04 15:10:59 by rlouvrie         ###   ########.fr       */
+/*   Created: 2023/12/08 16:41:27 by romain            #+#    #+#             */
+/*   Updated: 2023/12/08 18:30:04 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef AFORM_HPP
-# define AFORM_HPP
+#ifndef AForm_HPP
+# define AForm_HPP
 # include <iostream>
 # include "Bureaucrat.hpp"
 
 class Bureaucrat;
 
-class AForm
-{
-	public:
-		AForm(int g_s, int g_e, std::string name);
-		AForm(const AForm &cp);
-		AForm	&operator=(const AForm &rhs);
-		virtual ~AForm();
-		void				beSigned(const Bureaucrat &bureaucrat);
-		int					getGradeS(void)	const;
-		int					getGradeE(void)	const;
-		const std::string	getName(void)	const;
-		bool				isSigned(void)	const;
-		virtual void execute(Bureaucrat const & executor) const = 0;
-		class GradeTooHighException : public std::exception 
-		{
+class AForm {
+    public:
+        AForm(std::string name, int s_grade, int e_grade);
+        AForm(const AForm &cp);
+        AForm    &operator=(const AForm &rhs);    
+        ~AForm();
+        std::string		getName(void)	const;
+		bool			isSigned(void)	const;
+		int				getSGrade(void)	const;
+		int				getEGrade(void)	const;
+		void			beSigned(const Bureaucrat &bureaucrat);
+		void			execute(Bureaucrat const & executor) const;
+		virtual void	executeAction(Bureaucrat const & executor) const = 0;
+        class GradeTooHighException : public std::exception {
 			public:
-				const char* what() const throw() 
-				{
-					return "Grade is too high";
-				}
+				const char* what() const throw();
 		};
-		class GradeTooLowException : public std::exception
-		{
+		class GradeTooLowException : public std::exception {
 			public:
-				const char* what() const throw()
-				{
-					return "Grade is too low";
-				}
+				const char* what() const throw();
 		};
-	private:
-		const std::string	_name;
-		bool				_signed;
-		const int			_grade_s;
-		const int			_grade_e;
-		AForm(void);
+		class FormAlreadySignedException : public std::exception {
+			public:
+				const char* what() const throw();
+		};
+		class FormNotSignedException : public std::exception {
+			public:
+				const char* what() const throw();
+		};
+    private:
+        const std::string   _name;
+        bool                _signed;
+        const int           _s_grade;
+        const int           _e_grade;
+        AForm(void);
 };
 std::ostream	&operator<<(std::ostream &out, const AForm &AForm);
 #endif

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.hpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 09:50:47 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/11/06 11:28:47 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/12/08 18:41:01 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 # include <iostream>
 # include "AForm.hpp"
 
-class AForm;
+class	AForm;
 
 class Bureaucrat
 {
@@ -29,21 +29,13 @@ class Bureaucrat
 		void				increment(void);
 		void				decrement(void);
 		void				signForm(AForm &form);
-		class GradeTooHighException : public std::exception 
-		{
+		class GradeTooHighException : public std::exception {
 			public:
-				const char* what() const throw() 
-				{
-					return "Grade is too high";
-				}
+				const char* what() const throw();
 		};
-		class GradeTooLowException : public std::exception
-		{
+		class GradeTooLowException : public std::exception {
 			public:
-				const char* what() const throw()
-				{
-					return "Grade is too low";
-				}
+				const char* what() const throw();
 		};
 	private:
 		const std::string		_name;

@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+         #
+#    By: romain <romain@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 18:11:04 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/11/06 11:30:00 by rlouvrie         ###   ########.fr        #
+#    Updated: 2023/12/08 19:24:17 by romain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,9 +18,12 @@ CPP_FLAGS = -Wall -Werror -Wextra
 
 CPP_VERSION = -std=c++98
 
-SRCS =	main.cpp		\
-		Bureaucrat.cpp	\
-		AForm.cpp
+SRCS =	main.cpp					\
+		Bureaucrat.cpp				\
+		AForm.cpp					\
+		PresidentialPardonForm.cpp	\
+		RobotomyRequestForm.cpp		\
+		ShrubberyCreationForm.cpp
 
 OBJS := ${SRCS:.cpp=.o}
 
