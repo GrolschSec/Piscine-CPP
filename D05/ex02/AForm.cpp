@@ -52,6 +52,10 @@ int		AForm::getEGrade(void)	const {
 	return (this->_e_grade);
 }
 
+std::string	AForm::getTarget(void)	const {
+	return (this->_target);
+}
+
 /******************************************************************************/
 
 void	AForm::beSigned(const Bureaucrat &bureaucrat) {

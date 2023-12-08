@@ -22,8 +22,9 @@ class AForm {
         AForm(std::string name, int s_grade, int e_grade);
         AForm(const AForm &cp);
         AForm    &operator=(const AForm &rhs);    
-        ~AForm();
+        virtual ~AForm();
         std::string		getName(void)	const;
+		std::string		getTarget(void)	const;
 		bool			isSigned(void)	const;
 		int				getSGrade(void)	const;
 		int				getEGrade(void)	const;
@@ -48,6 +49,7 @@ class AForm {
 		};
     private:
         const std::string   _name;
+		const std::string	_target;
         bool                _signed;
         const int           _s_grade;
         const int           _e_grade;
