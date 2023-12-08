@@ -6,7 +6,7 @@
 #    By: rlouvrie <rlouvrie@student.42.fr >         +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/08/20 18:11:04 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/11/04 15:03:39 by rlouvrie         ###   ########.fr        #
+#    Updated: 2023/11/04 09:50:22 by rlouvrie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,8 +19,7 @@ CPP_FLAGS = -Wall -Werror -Wextra
 CPP_VERSION = -std=c++98
 
 SRCS =	main.cpp		\
-		Bureaucrat.cpp	\
-		Form.cpp
+		Bureaucrat.cpp
 
 OBJS := ${SRCS:.cpp=.o}
 
