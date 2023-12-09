@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 18:02:06 by romain            #+#    #+#             */
-/*   Updated: 2023/12/08 23:25:11 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/09 11:18:39 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,13 +23,13 @@ int	main(void) {
 	AForm		*f2;
 	AForm		*f3;
 
-	f1 = lebleu.makeForm("presidential pardon");
-	f2 = lebleu.makeForm("robotomy request");
-	f3 = lebleu.makeForm("shrubbery creation");
-	tom.signForm(f1);
-	tom.executeForm(f1);
-	tom.executeForm(f2);
-	tom.signForm(f3);
-	tom.executeForm(f3);
+	f1 = lebleu.makeForm("presidential pardon", "Bender");
+	f2 = lebleu.makeForm("robotomy request", "Bender");
+	f3 = lebleu.makeForm("shrubbery creation", "Bender");
+	tom.signForm(*f1);
+	tom.executeForm(*f1);
+	tom.executeForm(*f2);
+	tom.signForm(*f3);
+	tom.executeForm(*f3);
 	
 }

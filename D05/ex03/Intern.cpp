@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/08 22:47:28 by romain            #+#    #+#             */
-/*   Updated: 2023/12/08 23:22:50 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/09 11:19:51 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,9 @@
 
 Intern::Intern(void) {}
 
-Intern::Intern(const Intern &cp) {}
+Intern::Intern(const Intern &cp) {
+	(void)cp;
+}
 
 Intern	&Intern::operator=(const Intern &rhs) {
 	(void)rhs;
@@ -27,7 +29,7 @@ Intern::~Intern() {}
 
 /******************************************************************************/
 
-AForm	*Intern::makeForm(const std::strign &name, const std::string &target) {
+AForm	*Intern::makeForm(const std::string &name, const std::string &target) {
 	std::string	list[3] = {
 		"presidential pardon",
 		"robotomy request",
@@ -56,6 +58,7 @@ AForm	*Intern::makeForm(const std::strign &name, const std::string &target) {
 		std::cerr
 			<< "[Intern]: Invalid form name, cannot create form.\n";
 	}
+	return (NULL);
 }
 
 /******************************************************************************/
