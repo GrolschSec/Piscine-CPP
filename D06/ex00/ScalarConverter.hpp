@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 21:40:51 by romain            #+#    #+#             */
-/*   Updated: 2023/12/10 15:17:57 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/10 16:33:57 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,6 +31,9 @@ enum e_type {
 class ScalarConverter {
 	public:
 		static void	convert(const std::string &literal);
+		class InvalidInputException : public std::exception {
+			const char* what() const throw();
+		};
 	private:
 		ScalarConverter(void);
 		ScalarConverter(const ScalarConverter &cp);
