@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 23:05:13 by romain            #+#    #+#             */
-/*   Updated: 2023/12/10 11:58:08 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/10 14:03:54 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,5 +93,5 @@ bool	isPseudoLiteral(const std::string &literal) {
 		|| literal == "-inff" 
 		|| literal == "+inff")
 		return (true);
-	return (false;) 
+	return (false); 
 }
