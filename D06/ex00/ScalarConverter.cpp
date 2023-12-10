@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 21:37:59 by romain            #+#    #+#             */
-/*   Updated: 2023/12/10 16:34:48 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/10 16:37:38 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ void	ScalarConverter::convert(const std::string &literal) {
 
 	switch (type) {
 		case INVALID:
-			break;
+			throw ScalarConverter::InvalidInputException();
 		case CHAR:
 			convertChar(literal);
 			break;
@@ -39,8 +39,6 @@ void	ScalarConverter::convert(const std::string &literal) {
 		case  P_LITERAL:
 			printPseudo(literal);
 			break;
-		default:
-			throw ScalarConverter::InvalidInputException();
 	}
 }
 
