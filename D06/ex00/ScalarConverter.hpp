@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 21:40:51 by romain            #+#    #+#             */
-/*   Updated: 2023/12/10 14:22:06 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/10 15:17:57 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,10 @@
 # define SCALAR_CONVERTER_HPP
 # include <iostream>
 # include <limits>
+# include <string>
+# include <sstream>
+# include <cctype>
+# include <iomanip>
 
 enum e_type {
 	INVALID,
