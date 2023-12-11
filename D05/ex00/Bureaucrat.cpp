@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/04 09:55:24 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/12/11 15:22:45 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/12/11 15:24:51 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ Bureaucrat::~Bureaucrat() {}
 
 /******************************************************************************/
 
-const std::string	&Bureaucrat::getName(void)	const {
+std::string	Bureaucrat::getName(void)	const {
 	return (this->_name);
 }
 
