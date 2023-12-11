@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 21:40:51 by romain            #+#    #+#             */
-/*   Updated: 2023/12/10 16:33:57 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/11 08:53:10 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,9 @@ class ScalarConverter {
 		class InvalidInputException : public std::exception {
 			const char* what() const throw();
 		};
+		class OverflowException : public std::exception {
+			const char* what() const throw();
+		};
 	private:
 		ScalarConverter(void);
 		ScalarConverter(const ScalarConverter &cp);
@@ -53,9 +56,9 @@ bool	isPseudoLiteral(const std::string &literal);
 
 void	printPseudo(const std::string &liberal);
 void	convertChar(const std::string &literal);
-void	convertInt(const std::string &literal);
-void	convertFloat(const std::string &literal);
-void	convertDouble(const std::string &literal);
+int		convertInt(const std::string &literal);
+int		convertFloat(const std::string &literal);
+int		convertDouble(const std::string &literal);
 
 /* ************************************************************************** */
 #endif
