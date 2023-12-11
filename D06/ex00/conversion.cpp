@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 22:57:06 by romain            #+#    #+#             */
-/*   Updated: 2023/12/10 15:36:31 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/11 12:26:43 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,20 +57,23 @@ void	convertChar(const std::string &literal) {
 		<< std::endl;
 }
 
-void	convertInt(const std::string &literal) {
+int	convertInt(const std::string &literal) {
     std::istringstream	iss(literal);
     int					value;
 
     iss >> value;
+	if (iss.fail())
+		return (1);
     std::cout << "char: ";
-    if (value >= std::numeric_limits<char>::min() 
-		&& value <= std::numeric_limits<char>::max() 
-		&& isprint(value))
-        std::cout << static_cast<char>(value);
+    if (value < std::numeric_limits<char>::min()
+		|| value > std::numeric_limits<char>::max())
+		std::cout << "impossible";
+	else if (!isprint(value))
+		std::cout << "Non displayable";
     else
-        std::cout << "Non displayable";
+        std::cout << static_cast<char>(value);
     std::cout 
-		<< "\nint: " 
+		<< "\nint: "
 		<< value
 		<< "\nfloat: " 
 		<< std::fixed 
@@ -79,23 +82,33 @@ void	convertInt(const std::string &literal) {
 		<< "f\ndouble: " 
 		<< static_cast<double>(value) 
 		<< std::endl;
+	return (0);
 }
 
-void	convertFloat(const std::string &literal) {
+int	convertFloat(const std::string &literal) {
     std::istringstream	iss(literal);
     float				value;
 
 	iss >> value;
+	if (iss.fail() || value == std::numeric_limits<float>::infinity())
+		return (1);
     std::cout << "char: ";
-    if (value >= std::numeric_limits<char>::min() 
-		&& value <= std::numeric_limits<char>::max() 
-		&& isprint(value))
-        std::cout << static_cast<char>(value);
-    else
+	if (value < std::numeric_limits<char>::min()
+		|| value > std::numeric_limits<char>::max())
+		std::cout << "impossible";
+    else if (!isprint(value))
         std::cout << "Non displayable";
+	else
+		std::cout << static_cast<char>(value);
     std::cout 
-		<< "\nint: " 
-		<< static_cast<int>(value)
+		<< "\nint: ";
+	if (value < std::numeric_limits<int>::min()
+		|| value > std::numeric_limits<int>::max())
+		std::cout << "impossible";
+	else
+		std::cout
+			<< static_cast<int>(value);
+	std::cout
 		<< "\nfloat: " 
 		<< std::fixed
 		<< std::setprecision(1)
@@ -103,23 +116,32 @@ void	convertFloat(const std::string &literal) {
 		<< "f\ndouble: " 
 		<< static_cast<double>(value) 
 		<< std::endl;
+	return (0);
 }
 
-void	convertDouble(const std::string &literal) {
-	std::istringstream	iss(literal);
+int	convertDouble(const std::string &literal) {
 	double				value;
+	
 
-	iss >> value;
+	value = strtof(literal.c_str(), NULL);
+	if (value == std::numeric_limits<float>::infinity())
+		return (1);
 	std::cout << "char: ";
-	if (value >= std::numeric_limits<char>::min()
-		&& value <= std::numeric_limits<char>::max()
-		&& isprint(value))
-		std::cout << static_cast<char>(value);
+	if (value < std::numeric_limits<char>::min()
+		|| value > std::numeric_limits<char>::max())
+		std::cout << "impossible";
+    else if (!isprint(value))
+        std::cout << "Non displayable";
 	else
-		std::cout << "Non displayable";
+		std::cout << static_cast<char>(value);
+	std::cout 
+		<< "\nint: ";
+	if (value < std::numeric_limits<int>::min()
+		|| value > std::numeric_limits<int>::max())
+		std::cout << "impossible";
+	else
+		std::cout << static_cast<int>(value);
 	std::cout
-		<< "\nint: "
-		<< static_cast<int>(value)
 		<< "\nfloat: "
 		<< std::fixed
 		<< std::setprecision(1)
@@ -127,4 +149,5 @@ void	convertDouble(const std::string &literal) {
 		<< "f\ndouble: "
 		<< value
 		<< std::endl;
+	return (0);
 }

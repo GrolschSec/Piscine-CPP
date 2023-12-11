@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 21:40:51 by romain            #+#    #+#             */
-/*   Updated: 2023/12/11 08:53:10 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/11 10:03:13 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,8 @@
 # include <string>
 # include <sstream>
 # include <cctype>
+# include <cerrno>
+# include <cstdlib>
 # include <iomanip>
 
 enum e_type {
