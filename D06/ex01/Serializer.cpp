@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*    Serializer.cpp                                    :+:      :+:    :+:   */
+/*   Serializer.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 12:49:25 by romain            #+#    #+#             */
-/*   Updated: 2023/12/11 21:52:12 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/11 22:17:47 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,3 +28,11 @@ Serializer	&Serializer::operator=(const Serializer &rhs) {
 Serializer::~Serializer() {}
 
 /* ************************************************************************** */
+
+uintptr_t	Serializer::serialize(Data* ptr) {
+	return (reinterpret_cast<uintptr_t>(ptr));
+}
+
+Data*	Serializer::deserialize(uintptr_t raw) {
+	return (reinterpret_cast<Data *>(raw));
+}

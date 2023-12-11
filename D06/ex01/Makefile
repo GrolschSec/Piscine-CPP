@@ -6,13 +6,13 @@
 #    By: romain <romain@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/11 12:50:14 by romain            #+#    #+#              #
-#    Updated: 2023/12/11 12:50:41 by romain           ###   ########.fr        #
+#    Updated: 2023/12/11 22:18:40 by romain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = convert
+NAME = Serializer
 
 CPP_FLAGS = -Wall -Werror -Wextra
 
