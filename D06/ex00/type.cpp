@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 23:05:13 by romain            #+#    #+#             */
-/*   Updated: 2023/12/10 14:03:54 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/12 15:04:10 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,17 +15,10 @@
 e_type	findType(const std::string &literal) {
 	if (literal.empty())
 		return (INVALID);
-	if (isPseudoLiteral(literal))
-		return (P_LITERAL);
 	if (isChar(literal))
 		return (CHAR);
-	if (isInt(literal))
-		return (INT);
-	if (isFloat(literal)) {
-		if (literal[literal.length() - 1] != 'f')
-			return (DOUBLE);
-		return (FLOAT);
-	}
+	if (isInt(literal) || isFloat(literal))
+		return (DOUBLE);
 	return (INVALID);
 }
 

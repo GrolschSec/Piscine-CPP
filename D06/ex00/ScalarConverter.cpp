@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 21:37:59 by romain            #+#    #+#             */
-/*   Updated: 2023/12/12 14:53:18 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/12 15:02:27 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,17 +27,8 @@ void	ScalarConverter::convert(const std::string &literal) {
 		case CHAR:
 			convertChar(literal);
 			break;
-		case INT:
-			convertInt(literal);
-			break;
-		case FLOAT:
-			convertFloat(literal);
-			break;
 		case DOUBLE:
 			convertDouble(literal);
-			break;
-		case  P_LITERAL:
-			printPseudo(literal);
 			break;
 	}
 }
