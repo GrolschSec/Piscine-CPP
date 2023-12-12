@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 22:57:06 by romain            #+#    #+#             */
-/*   Updated: 2023/12/12 14:37:12 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/12 14:42:00 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,7 @@ void	convertChar(const std::string &literal) {
 
 int	convertInt(const std::string &literal) {
     std::istringstream	iss(literal);
-    int					value;
+    double				value;
 
     iss >> value;
     std::cout << "char: ";
@@ -72,7 +72,8 @@ int	convertInt(const std::string &literal) {
         std::cout << static_cast<char>(value);
     std::cout 
 		<< "\nint: ";
-	if (iss.fail())
+	if (value < std::numeric_limits<int>::min() 
+		|| value > std::numeric_limits<int>::max())
 		std::cout << "impossible";
 	else
 		std::cout << value;
