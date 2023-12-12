@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 23:05:13 by romain            #+#    #+#             */
-/*   Updated: 2023/12/12 15:04:10 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/12 15:12:21 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,6 +63,8 @@ bool	isFloat(const std::string &literal) {
 	}
 	if (literal[literal.length() - 1] == 'f') {
 		if (literal.length() == 1)
+			return (false);
+		if (!isdigit(literal[literal.length() - 2]))
 			return (false);
 	}
 	for (size_t i = startIndex; i < literal.length(); i++) {
