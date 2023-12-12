@@ -6,11 +6,38 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 22:57:06 by romain            #+#    #+#             */
-/*   Updated: 2023/12/12 15:09:56 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/12 15:42:32 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScalarConverter.hpp"
+
+void	printPseudo(const std::string &literal) {
+	if (literal == "nan" || literal == "nanf") {
+		std::cout
+			<< "char: impossible\n" 
+			<< "int: impossible\n"
+			<< "float: nanf\n"
+			<< "double: nan"
+			<< std::endl;
+	}
+	else if (literal == "+inf" || literal == "+inff") {
+		std::cout 
+			<< "char: impossible\n"
+			<< "int: impossible\n"
+			<< "float: +inff\n"
+			<< "double: +inf"
+			<< std::endl;
+	}
+	else if (literal == "-inf" || literal == "-inff") {
+		std::cout
+			<< "char: impossible\n"
+			<< "int: impossible\n"
+			<< "float: -inff\n"
+			<< "double: -inf"
+			<< std::endl;
+	}
+}
 
 void	convertChar(const std::string &literal) {
 	char value = literal.length() == 3 ? literal[1] : literal[0];

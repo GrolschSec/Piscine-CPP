@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 21:40:51 by romain            #+#    #+#             */
-/*   Updated: 2023/12/12 15:05:31 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/12 15:42:00 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,7 @@ enum e_type {
 	INVALID,
 	CHAR,
 	DOUBLE,
+	P_LITERAL
 };
 
 class ScalarConverter {
@@ -53,6 +54,7 @@ bool	isPseudoLiteral(const std::string &literal);
 
 /* ************************************************************************** */
 
+void	printPseudo(const std::string &literal);
 void	convertChar(const std::string &literal);
 int		convertDouble(const std::string &literal);
 
