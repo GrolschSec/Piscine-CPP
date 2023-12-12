@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 22:25:59 by romain            #+#    #+#             */
-/*   Updated: 2023/12/11 23:04:11 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/12 13:39:23 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 # include "Base.hpp"
 
 class C : public Base {
-	virtual ~C() {}
+	public:
+		virtual ~C();
 };
 #endif
