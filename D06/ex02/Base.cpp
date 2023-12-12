@@ -6,13 +6,18 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/11 22:25:47 by romain            #+#    #+#             */
-/*   Updated: 2023/12/11 23:18:21 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/12 13:56:52 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Base.hpp"
+#include "A.hpp"
+#include "B.hpp"
+#include "C.hpp"
 
 /* ************************************************************************** */
+
+Base::Base(void) {}
 
 Base::~Base() {}
 
@@ -31,9 +36,8 @@ Base	*generate(void) {
 		case 2:
 			return (new C);
 		default:
-			std::cerr
-				<< "Error: invalid random number\n"
-			break;
+			std::cerr << "Error: invalid random number\n";
+		return (NULL);
 	}
 }
 
@@ -46,7 +50,7 @@ void	identify(Base* p) {
 		std::cout << "C\n";
 	else
 		std::cerr
-			<< "Error: invalid pointer"
+			<< "Error: invalid pointer";
 }
 
 void	identify(Base& p) {
