@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 22:57:06 by romain            #+#    #+#             */
-/*   Updated: 2023/12/11 12:26:43 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/12 14:37:12 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,8 +62,6 @@ int	convertInt(const std::string &literal) {
     int					value;
 
     iss >> value;
-	if (iss.fail())
-		return (1);
     std::cout << "char: ";
     if (value < std::numeric_limits<char>::min()
 		|| value > std::numeric_limits<char>::max())
@@ -73,8 +71,12 @@ int	convertInt(const std::string &literal) {
     else
         std::cout << static_cast<char>(value);
     std::cout 
-		<< "\nint: "
-		<< value
+		<< "\nint: ";
+	if (iss.fail())
+		std::cout << "impossible";
+	else
+		std::cout << value;
+	std::cout
 		<< "\nfloat: " 
 		<< std::fixed 
 		<< std::setprecision(1) 
@@ -90,8 +92,6 @@ int	convertFloat(const std::string &literal) {
     float				value;
 
 	iss >> value;
-	if (iss.fail() || value == std::numeric_limits<float>::infinity())
-		return (1);
     std::cout << "char: ";
 	if (value < std::numeric_limits<char>::min()
 		|| value > std::numeric_limits<char>::max())
@@ -124,8 +124,6 @@ int	convertDouble(const std::string &literal) {
 	
 
 	value = strtof(literal.c_str(), NULL);
-	if (value == std::numeric_limits<float>::infinity())
-		return (1);
 	std::cout << "char: ";
 	if (value < std::numeric_limits<char>::min()
 		|| value > std::numeric_limits<char>::max())
