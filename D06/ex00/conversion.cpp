@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 22:57:06 by romain            #+#    #+#             */
-/*   Updated: 2023/12/12 15:42:32 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/12 15:46:12 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	convertChar(const std::string &literal) {
 
 int	convertDouble(const std::string &literal) {
 	double				value;
-	
 
 	value = atof(literal.c_str());
 	std::cout << "char: ";
