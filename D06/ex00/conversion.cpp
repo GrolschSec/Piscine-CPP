@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/09 22:57:06 by romain            #+#    #+#             */
-/*   Updated: 2023/12/12 14:42:00 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/12 14:52:23 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,10 +58,9 @@ void	convertChar(const std::string &literal) {
 }
 
 int	convertInt(const std::string &literal) {
-    std::istringstream	iss(literal);
     double				value;
 
-    iss >> value;
+	value = strtof(literal.c_str(), NULL);
     std::cout << "char: ";
     if (value < std::numeric_limits<char>::min()
 		|| value > std::numeric_limits<char>::max())
