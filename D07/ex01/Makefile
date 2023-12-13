@@ -5,14 +5,14 @@
 #                                                     +:+ +:+         +:+      #
 #    By: romain <romain@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2023/12/13 10:23:19 by romain            #+#    #+#              #
-#    Updated: 2023/12/13 12:07:28 by romain           ###   ########.fr        #
+#    Created: 2023/12/13 12:07:33 by romain            #+#    #+#              #
+#    Updated: 2023/12/13 12:07:39 by romain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 
-NAME = template
+NAME = iter
 
 CPP_FLAGS = -Wall -Werror -Wextra
 
