@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 10:19:16 by romain            #+#    #+#             */
-/*   Updated: 2023/12/13 11:00:40 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/13 11:01:48 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,6 @@ int	main(void) {
 	std::cout << "value c: " << c << " value d: " << d << std::endl;
 	::swap<float>(c, d);
 	std::cout << "value c: " << c << " value d: " << d << std::endl;
-	
 
 	std::cout << "Min value (int) is: " << ::min<int>(a, b) << std::endl;
 	std::cout << "Max value (int) is: " << ::max<int>(a, b) << std::endl;
