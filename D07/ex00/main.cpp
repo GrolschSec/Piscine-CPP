@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/13 10:19:16 by romain            #+#    #+#             */
-/*   Updated: 2023/12/13 11:01:48 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/15 13:18:54 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ int	main(void) {
 	std::string e = "chaine1";
 	std::string f = "chaine2";
 
-	::swap(e, f);
+	::swap<std::string>(e, f);
 	std::cout << "e = " << e << ", f = " << f << std::endl;
 	std::cout << "min( e, f ) = " << ::min( e, f ) << std::endl;
 	std::cout << "max( e, f ) = " << ::max( e, f ) << std::endl;
