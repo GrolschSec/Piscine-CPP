@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:42:49 by romain            #+#    #+#             */
-/*   Updated: 2023/12/16 17:33:04 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/16 17:34:28 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ void	Span::addNumbers(std::vector<int>::const_iterator it,
 		throw std::logic_error("[Span] - Begin must be smaller than end");
 	}
 	for (std::vector<int>::const_iterator it2 = it; it2 != end; it2++) {
-		addNumber(*it2);
+		this->addNumber(*it2);
 	}
 }
 
