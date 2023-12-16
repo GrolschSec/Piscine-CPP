@@ -6,7 +6,7 @@
 #    By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/16 13:10:58 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/12/16 13:11:10 by rlouvrie         ###   ########.fr        #
+#    Updated: 2023/12/16 13:49:28 by rlouvrie         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJS := ${SRCS:.cpp=.o}
 
 all: $(NAME)
 
-$(NAME): ${OBJS}
+$(NAME): ${OBJS} easyfind.hpp
 	$(CC) $(CPP_FLAGS) $(CPP_VERSION) $(OBJS) -o $(NAME)
 
 .cpp.o:
