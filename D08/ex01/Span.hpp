@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:42:52 by romain            #+#    #+#             */
-/*   Updated: 2023/12/16 17:33:31 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/16 18:55:56 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,5 +32,5 @@ class Span {
 	private:
 		std::vector<int>	_vc;
 		Span(void);
-}
+};
 #endif

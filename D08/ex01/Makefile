@@ -6,7 +6,7 @@
 #    By: romain <romain@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/16 13:10:58 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/12/16 16:42:47 by romain           ###   ########.fr        #
+#    Updated: 2023/12/16 18:57:01 by romain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJS := ${SRCS:.cpp=.o}
 
 all: $(NAME)
 
-$(NAME): ${OBJS} Span.hpp
+$(NAME): ${OBJS}
 	$(CC) $(CPP_FLAGS) $(CPP_VERSION) $(OBJS) -o $(NAME)
 
 .cpp.o:
