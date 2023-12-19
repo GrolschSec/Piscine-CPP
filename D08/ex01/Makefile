@@ -6,7 +6,7 @@
 #    By: romain <romain@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/16 13:10:58 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/12/16 18:57:01 by romain           ###   ########.fr        #
+#    Updated: 2023/12/19 17:58:36 by romain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,7 +18,8 @@ CPP_FLAGS = -Wall -Werror -Wextra
 
 CPP_VERSION = -std=c++98
 
-SRCS =	main.cpp
+SRCS =	main.cpp	\
+		Span.cpp
 
 OBJS := ${SRCS:.cpp=.o}
 
