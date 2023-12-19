@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 13:11:47 by rlouvrie          #+#    #+#             */
-/*   Updated: 2023/12/16 16:32:20 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/19 17:40:50 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,22 +32,6 @@ int main(void) {
 			<< e.what()
 			<< std::endl;
 	}
-
-	std::map<int, std::string> t2;
-	for (int i = 0; i < 5; i++) {
-		t2[i] = "Value " + std::to_string(5 - i);
-	}
-    try {
-        easyfind(t2, 2);
-        std::cout
-			<< "[Map] - Element was found!"
-			<< std::endl;
-    } catch (ElementNotFoundException &e) {
-        std::cerr
-			<< "[Map] - Exception caught: " 
-			<< e.what() 
-			<< std::endl;
-    }
 
 	std::list<int>	t3;
 	for (int i = 0; i < 5; i++) {
