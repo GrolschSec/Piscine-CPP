@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 16:42:49 by romain            #+#    #+#             */
-/*   Updated: 2023/12/16 17:34:28 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/19 19:59:34 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,11 @@ Span	&Span::operator=(Span const &rhs) {
 	return (*this);
 }
 
-Span::~Span() {}
+Span::~Span() {
+	std::cout
+		<< "[Span] - Destructor called."
+		<< std::endl;
+}
 
 /* ************************************************************************** */
 
@@ -51,8 +55,8 @@ size_t	Span::longestSpan(void)		const {
 	std::vector<int>::const_iterator min;
 	std::vector<int>::const_iterator max;
 
-	if (this->_vc.size <= 1) {
-		std::logic_error("[Span] - Not enough values to find shortest span.");
+	if (this->_vc.size() <= 1) {
+		throw std::logic_error("[Span] - Not enough values to find shortest span.");
 	}
 	min = std::min_element(this->_vc.begin(), this->_vc.end());
 	max = std::max_element(this->_vc.begin(), this->_vc.end());
@@ -62,12 +66,12 @@ size_t	Span::longestSpan(void)		const {
 size_t	Span::shortestSpan(void)	const {
 	std::vector<int> vc2(this->_vc);
 
-	if (this->_vc.size <= 1) {
-		std::logic_error("[Span] - Not enough values to find shortest span.");
+	if (this->_vc.size() <= 1) {
+		throw std::logic_error("[Span] - Not enough values to find shortest span.");
 	}
-	std::sort(vc2.begin(), vc2.back());
+	std::sort(vc2.begin(), vc2.end());
 	size_t	res = std::numeric_limits<size_t>::max();
-	for (size_t = 1; i < vc2.size(); i++) {
+	for (size_t i = 1; i < vc2.size(); i++) {
 		size_t span = vc2[i] - vc2[i - 1];
 		if (span < res)
 			res = span;
@@ -80,7 +84,7 @@ void	Span::addNumbers(std::vector<int>::const_iterator it,
 	if (ite < it) {
 		throw std::logic_error("[Span] - Begin must be smaller than end");
 	}
-	for (std::vector<int>::const_iterator it2 = it; it2 != end; it2++) {
+	for (std::vector<int>::const_iterator it2 = it; it2 != ite; it2++) {
 		this->addNumber(*it2);
 	}
 }
