@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+         #
+#    By: romain <romain@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/16 13:10:58 by rlouvrie          #+#    #+#              #
-#    Updated: 2023/12/16 13:49:28 by rlouvrie         ###   ########.fr        #
+#    Updated: 2023/12/19 17:42:43 by romain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,7 +24,7 @@ OBJS := ${SRCS:.cpp=.o}
 
 all: $(NAME)
 
-$(NAME): ${OBJS} easyfind.hpp
+$(NAME): ${OBJS}
 	$(CC) $(CPP_FLAGS) $(CPP_VERSION) $(OBJS) -o $(NAME)
 
 .cpp.o:
