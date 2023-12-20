@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:01:28 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 12:55:30 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/20 13:03:46 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,13 @@ int main(void) {
 	std::cout
 		<< "\nIterating mstack vector: "
 		<< std::endl;
-    MutantStack<int, std::vector<int> > mstackVector;
-    mstackVector.push(10);
-    mstackVector.push(20);
-	mstackVector.push(14);
-	mstackVector.push(40);
+    MutantStack<float, std::vector<float> > mstackVector;
+    mstackVector.push(10.7);
+    mstackVector.push(20.2);
+	mstackVector.push(14.3);
+	mstackVector.push(40.9);
 	for (
-		MutantStack<int, std::vector<int> >::iterator it = mstackVector.begin();
+		MutantStack<int, std::vector<float> >::iterator it = mstackVector.begin();
 		it != mstackVector.end();
 		++it
 	) {
