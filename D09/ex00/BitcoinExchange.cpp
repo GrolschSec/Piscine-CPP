@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:58:49 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 21:22:03 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/20 21:26:59 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ BitcoinExchange::BitcoinExchange(void) {
 	std::string		line;
 
 	if (!file.is_open())
-        throw CouldNotOpenFileException();
+        throw CouldNotOpenDBException();
 	std::getline(file, line);
 	if (line != "date,exchange_rate")
 		throw InvalidDBHeaderException();
@@ -245,4 +245,8 @@ const char* BitcoinExchange::InvalidInputHeaderException::what() const throw() {
 
 const char*	BitcoinExchange::EmptyDatabaseException::what() const throw() {
 	return ("database is empty.");
+}
+
+const char*	BitcoinExchange::CouldNotOpenDBException::what() const throw() {
+	return ("could not open database.");
 }

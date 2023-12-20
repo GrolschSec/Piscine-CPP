@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:45:46 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 21:21:45 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/20 21:25:43 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -53,6 +53,10 @@ class BitcoinExchange {
 		class EmptyDatabaseException : public std::exception {
 			public:
 				const char* what() const throw();	
+		};
+		class CouldNotOpenDBException : public std::exception {
+			public:
+				const char* what() const throw();
 		};
 };
 #endif
