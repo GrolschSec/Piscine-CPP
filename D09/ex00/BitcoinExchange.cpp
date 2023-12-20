@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:58:49 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 17:50:24 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/20 18:11:58 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,6 @@ bool	BitcoinExchange::checkDay(int day, int month, bool isBisextile) const {
 	maxPerMonth[10] = 31;
 	maxPerMonth[11] = 30;
 	maxPerMonth[12] = 31;
-
 	if (day < 1 || day > maxPerMonth[month]) {
 		return (false);
 	}
@@ -106,17 +105,19 @@ bool	BitcoinExchange::verifyDate(std::string const &date) {
 	unsigned int		year, month, day;
     char				delim1, delim2;
 
+	for (size_t i = 0; i < date.size(); i++) {
+		if (i != 4 && i != 7 && !std::isdigit(date[i])) {
+			return (false);
+		}
+	}
 	iss >> year >> delim1 >> month >> delim2 >> day;
 	if (date.length() != 10 || delim1 != '-' || delim2 != '-') {
 		return (false);
-	}
-	if (year < 1 || year > this->getActualYear()) {
+	} if (year < 1 || year > this->getActualYear()) {
 		return (false);
-	}
-	if (month < 1 || month > 12) {
+	} if (month < 1 || month > 12) {
 		return (false);
-	}
-	if (!this->checkDay(day, month, isBisextile(year))) {
+	} if (!this->checkDay(day, month, isBisextile(year))) {
 		return (false);
 	}
 	return (true);
