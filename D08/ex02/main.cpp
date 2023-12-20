@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:01:28 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 11:47:21 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/20 12:34:06 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -46,20 +46,5 @@ int main(void) {
         --it;
         std::cout << *it << " ";
     }
-    std::stack<int> s(mstack);
-    std::cout 
-		<< "\nTop element in the copied std::stack: " 
-		<< s.top() 
-		<< std::endl;
-    MutantStack<int> anotherStack;
-    anotherStack = mstack;
-    std::cout 
-		<< "Top element in the assigned stack: " 
-		<< anotherStack.top() 
-		<< std::endl;
-    std::cout 
-		<< "Size of the assigned stack: " 
-		<< anotherStack.size() 
-		<< std::endl;
     return 0;
 }
