@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:58:49 by romain            #+#    #+#             */
-/*   Updated: 2023/12/18 17:57:31 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/20 14:58:20 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,6 +58,48 @@ BitcoinExchange::~BitcoinExchange() {}
 
 /* ************************************************************************** */
 
+int	BitcoinExchange::getActualYear(void)	const {
+	int					year;
+	std::time_t			result = std::time(NULL);
+	std::istringstream	iss(ctime(&result));
+
+	iss.ignore(20);
+	iss >> year;
+	return (year);
+}
+
+bool	BitcoinExchange::isBisextile(int year) const {
+	if (year % 4 == 0) {
+		return (true);
+	}
+	if (year % 400 == 0) {
+		return (true);
+	}
+	return (false);
+}
+
+bool	BitcoinExchange::checkDay(int day, int month, bool isBisextile) const {
+	std::map<int, int>	maxPerMonth;
+
+	maxPerMonth[1] = 31;
+	maxPerMonth[2] = isBisextile ? 29 : 28;
+	maxPerMonth[3] = 31;
+	maxPerMonth[4] = 30;
+	maxPerMonth[5] = 31;
+	maxPerMonth[6] = 30;
+	maxPerMonth[7] = 31;
+	maxPerMonth[8] = 31;
+	maxPerMonth[9] = 30;
+	maxPerMonth[10] = 31;
+	maxPerMonth[11] = 30;
+	maxPerMonth[12] = 31;
+
+	if (day < 1 || day > maxPerMonth[month]) {
+		return (false);
+	}
+	return (true);
+}
+
 bool	BitcoinExchange::verifyDate(std::string const &date) {
 	std::istringstream	iss(date);
 	unsigned int		year, month, day;
@@ -67,13 +109,13 @@ bool	BitcoinExchange::verifyDate(std::string const &date) {
 	if (date.length() != 10 || delim1 != '-' || delim2 != '-') {
 		return (false);
 	}
-	if (year < 1 || year > 2023) {
+	if (year < 1 || year > this->getActualYear()) {
 		return (false);
 	}
 	if (month < 1 || month > 12) {
 		return (false);
 	}
-	if (day < 1 || day > 31) {
+	if (!this->checkDay(day, month, isBisextile(year))) {
 		return (false);
 	}
 	return (true);
