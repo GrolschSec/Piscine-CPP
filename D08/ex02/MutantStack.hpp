@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:02:01 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 12:56:02 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/20 12:59:23 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 # include <cstdlib>
 # include <list>
 # include <vector>
+# include <deque>
 
 template <typename T, typename Container = std::deque<T> >
 class MutantStack : public std::stack<T, Container> {
