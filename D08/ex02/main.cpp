@@ -6,14 +6,11 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:01:28 by romain            #+#    #+#             */
-/*   Updated: 2023/12/18 11:34:39 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/19 20:42:57 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MutantStack.hpp"
-
-#include "MutantStack.hpp"
-#include <iostream>
 
 int main(void) {
     MutantStack<int> mstack;
