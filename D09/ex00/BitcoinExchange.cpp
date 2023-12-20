@@ -6,7 +6,7 @@
 /*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:58:49 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 14:58:20 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/12/20 15:46:05 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,8 +58,8 @@ BitcoinExchange::~BitcoinExchange() {}
 
 /* ************************************************************************** */
 
-int	BitcoinExchange::getActualYear(void)	const {
-	int					year;
+unsigned int	BitcoinExchange::getActualYear(void)	const {
+	unsigned int		year;
 	std::time_t			result = std::time(NULL);
 	std::istringstream	iss(ctime(&result));
 
