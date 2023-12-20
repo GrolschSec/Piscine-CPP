@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:58:49 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 15:46:05 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/12/20 17:50:24 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,10 +69,11 @@ unsigned int	BitcoinExchange::getActualYear(void)	const {
 }
 
 bool	BitcoinExchange::isBisextile(int year) const {
-	if (year % 4 == 0) {
-		return (true);
-	}
 	if (year % 400 == 0) {
+		return (true);
+	} else if (year % 100 == 0) {
+		return (false);
+	} else if (year % 4 == 0) {
 		return (true);
 	}
 	return (false);
