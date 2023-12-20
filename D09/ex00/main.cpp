@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:59:30 by romain            #+#    #+#             */
-/*   Updated: 2023/12/18 17:58:09 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/20 18:29:58 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@ int	main(int argc, char **argv) {
 			throw BitcoinExchange::CouldNotOpenFileException();
 		}
 		BitcoinExchange	btc;
+		btc.process_file(argv[1]);
 	} catch (std::exception &e) {
 		std::cerr
 			<< "Error: "

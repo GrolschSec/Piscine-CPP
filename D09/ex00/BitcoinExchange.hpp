@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:45:46 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 18:26:02 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/20 21:21:45 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,14 +25,8 @@ class BitcoinExchange {
 	public:
 		BitcoinExchange(void);
 		~BitcoinExchange();
-		bool	verifyDate(std::string const &date);
-		bool	verifyRate(double const &rate);
-		void	printMap(void)	const;
+		void	process_file(char *argv);
 		class CouldNotOpenFileException : public std::exception {
-			public:
-				const char* what() const throw();
-		};
-		class InvalidDBHeaderException : public std::exception {
 			public:
 				const char* what() const throw();
 		};
@@ -43,5 +37,22 @@ class BitcoinExchange {
 		unsigned int	getActualYear(void)	const;
 		bool			isBisextile(int year)	const;
 		bool			checkDay(int day, int month, bool isBisextile) const;
+		bool			verifyDate(std::string const &date);
+		bool			verifyValue(double const &rate);
+		void			printMap(void)	const;
+		void			exchange(std::string const &line);
+		double			getClosestRate(std::string &date);
+		class InvalidDBHeaderException : public std::exception {
+			public:
+				const char* what() const throw();
+		};
+		class InvalidInputHeaderException : public std::exception {
+			public:
+				const char* what() const throw();
+		};
+		class EmptyDatabaseException : public std::exception {
+			public:
+				const char* what() const throw();	
+		};
 };
 #endif

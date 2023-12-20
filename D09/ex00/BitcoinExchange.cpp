@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:58:49 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 18:26:18 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/20 21:22:03 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ BitcoinExchange::BitcoinExchange(void) {
    		std::istringstream	iss(line);
 		std::string			date;
 		double				rate;
+		std::string			remaining;
 
 		std::getline(iss, date, ',');
 		iss >> rate;
@@ -40,6 +41,9 @@ BitcoinExchange::BitcoinExchange(void) {
 		}
 	}
 	file.close();
+	if (this->_db.empty()) {
+		throw EmptyDatabaseException();
+	}
 }
 
 BitcoinExchange::BitcoinExchange(BitcoinExchange const &cp) {
@@ -122,7 +126,7 @@ bool	BitcoinExchange::verifyDate(std::string const &date) {
 
 /* ************************************************************************** */
 
-bool	BitcoinExchange::verifyRate(double const &rate) {
+bool	BitcoinExchange::verifyValue(double const &rate) {
 	if (rate < 0) {
 		return (false);
 	}
@@ -147,6 +151,84 @@ void	BitcoinExchange::printMap(void)	const {
 	}
 }
 
+void	BitcoinExchange::process_file(char *argv) {
+	std::ifstream	file;
+	std::string		line;
+
+	if (!argv) {
+		throw CouldNotOpenFileException();
+	}
+	file.open(argv);
+	if (!file.is_open()) {
+		throw CouldNotOpenFileException();
+	}
+	std::getline(file, line);
+	if (line != "date | value") {
+		throw InvalidInputHeaderException();
+	}
+	while (std::getline(file, line)) {
+		exchange(line);
+	}
+}
+
+void	BitcoinExchange::exchange(std::string const &line) {
+	std::istringstream	iss(line);
+	std::string			date;
+	char				sep;
+	double				value;
+	std::string			remaining;
+	
+	if (!(iss >> date >> sep >> value)) {
+		std::cerr
+			<< "Error: cannot parse line => "
+			<< line
+			<< std::endl;
+	} else if (sep != '|' || !verifyDate(date) 
+		|| line[10] != ' ' || line[11] != '|' 
+		|| line[12] != ' ' || (!isdigit(line[13])
+		&& line[13] != '-')) {
+		std::cerr
+			<< "Error: bad input => "
+			<< line 
+			<< std::endl;
+	} else if (value < 0){
+		std::cerr
+			<< "Error: not a positive number."
+			<< std::endl;
+	} else if (value > 1000) {
+		std::cerr
+			<< "Error: too large number."
+			<< std::endl;
+	} else if (iss >> remaining && !remaining.empty()) {
+		std::cerr
+			<< "Error: bad input => "
+			<< line
+			<< std::endl;
+	} else {
+		std::cout
+			<< date
+			<< " => "
+			<< value
+			<< " = "
+			<< getClosestRate(date) * value
+			<< std::endl;
+	}
+}
+
+double	BitcoinExchange::getClosestRate(std::string &date) {
+	std::map<std::string, double>::iterator it = _db.find(date);
+	std::map<std::string, double>::reverse_iterator rit;
+	if (it != _db.end()) {
+		return (it->second);
+	}
+    for (rit = _db.rbegin(); rit != _db.rend(); ++rit) {
+        if (rit->first < date) {
+            return rit->second;
+        }
+    }
+	return (0);
+}
+
 /* ************************************************************************** */
 
 const char*	BitcoinExchange::CouldNotOpenFileException::what() const throw() {
@@ -155,4 +237,12 @@ const char*	BitcoinExchange::CouldNotOpenFileException::what() const throw() {
 
 const char* BitcoinExchange::InvalidDBHeaderException::what() const throw() {
 	return ("invalid database header, it should be: 'date,exchange_rate'.");
+}
+
+const char* BitcoinExchange::InvalidInputHeaderException::what() const throw() {
+	return ("invalid input header, it should be: 'date | value'");
+}
+
+const char*	BitcoinExchange::EmptyDatabaseException::what() const throw() {
+	return ("database is empty.");
 }
