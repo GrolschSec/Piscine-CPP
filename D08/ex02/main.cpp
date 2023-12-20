@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/16 19:01:28 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 12:34:06 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/20 12:55:30 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,34 +17,71 @@ int main(void) {
 
     mstack.push(5);
     mstack.push(17);
-    std::cout
-		<< "Top element: "
-			<< mstack.top()
-			<< std::endl;
-    mstack.pop();
     std::cout 
-		<< "Size after pop: "
-		<< mstack.size() 
+		<< "Top element: " 
+		<< mstack.top() 
 		<< std::endl;
+    mstack.pop();
     mstack.push(3);
     mstack.push(5);
     mstack.push(737);
     mstack.push(10002);
     mstack.push(0);
+
     std::cout 
-		<< "Iterating through stack:" 
+		<< "Iterating through stack:"
 		<< std::endl;
-    for (MutantStack<int>::iterator it = mstack.begin();
-		it != mstack.end(); ++it) {
-        std::cout << *it << " ";
+    for (
+		MutantStack<int>::iterator it = mstack.begin();
+		it != mstack.end();
+		++it
+	) {
+        std::cout 
+			<< *it 
+			<< " ";
     }
-    std::cout
-		<< "\nReverse iterating:"
+    std::cout 
+		<< "\nReverse iterating:" 
 		<< std::endl;
-    for (MutantStack<int>::iterator it = mstack.end();
-		it != mstack.begin();) {
-        --it;
-        std::cout << *it << " ";
+    for (
+		MutantStack<int>::iterator it = mstack.end();
+		it != mstack.begin(); --it
+	) {
+        std::cout 
+			<< *it 
+			<< " ";
     }
-    return 0;
+	std::cout
+		<< "\nIterating mstack list: "
+		<< std::endl;
+    MutantStack<int, std::list<int> > mstackList;
+    mstackList.push(10);
+    mstackList.push(20);
+    for (
+		MutantStack<int, std::list<int> >::iterator it = mstackList.begin();
+		it != mstackList.end();
+		++it
+	) {
+        std::cout 
+			<< *it 
+			<< " ";
+    }
+	std::cout
+		<< "\nIterating mstack vector: "
+		<< std::endl;
+    MutantStack<int, std::vector<int> > mstackVector;
+    mstackVector.push(10);
+    mstackVector.push(20);
+	mstackVector.push(14);
+	mstackVector.push(40);
+	for (
+		MutantStack<int, std::vector<int> >::iterator it = mstackVector.begin();
+		it != mstackVector.end();
+		++it
+	) {
+		std::cout
+			<< *it
+			<< " ";
+	}
+    return (0);
 }
