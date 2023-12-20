@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
+/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:45:46 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 15:45:46 by rlouvrie         ###   ########.fr       */
+/*   Updated: 2023/12/20 18:26:02 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,7 @@
 # include <string>
 # include <cstdlib>
 # include <ctime>
+# include <limits>
 
 class BitcoinExchange {
 	public:

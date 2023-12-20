@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:58:49 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 18:11:58 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/20 18:26:18 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,13 +33,10 @@ BitcoinExchange::BitcoinExchange(void) {
 		if (!date.empty() 
 			&& iss 
 			&& (iss.peek() == EOF || iss.peek() == '\n') 
-			&& verifyDate(date)) {
+			&& verifyDate(date)
+			&& rate >= 0
+			&& rate <= std::numeric_limits<int>::max()) {
 			this->_db[date] = rate;
-		} else {
-			std::cerr
-				<< "Error: format in database => "  
-				<< line 
-				<< std::endl;
 		}
 	}
 	file.close();
@@ -123,6 +120,8 @@ bool	BitcoinExchange::verifyDate(std::string const &date) {
 	return (true);
 }
 
+/* ************************************************************************** */
+
 bool	BitcoinExchange::verifyRate(double const &rate) {
 	if (rate < 0) {
 		return (false);
@@ -157,4 +156,3 @@ const char*	BitcoinExchange::CouldNotOpenFileException::what() const throw() {
 const char* BitcoinExchange::InvalidDBHeaderException::what() const throw() {
 	return ("invalid database header, it should be: 'date,exchange_rate'.");
 }
-
