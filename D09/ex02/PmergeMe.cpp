@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 11:22:55 by romain            #+#    #+#             */
-/*   Updated: 2023/12/21 13:17:39 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/21 13:22:45 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -131,7 +131,6 @@ void	PmergeMe::mergeInsertSort(T &container) {
 	std::advance(middle, container.size() / 2);
 	T left(container.begin(), middle);
 	T right(middle, container.end());
-
 	mergeInsertSort(left);
 	mergeInsertSort(right);
 	container.clear();
