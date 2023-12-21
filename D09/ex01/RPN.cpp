@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   RPN.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/20 21:36:17 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 22:56:12 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/21 17:46:11 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -109,6 +109,9 @@ void	RPN::calculator(std::string const &expr) {
 		} else {
 			this->doOps(str);
 		}
+	}
+	if (this->_stack.size() > 1) {
+		throw std::invalid_argument("invalid expression");
 	}
 }
 
