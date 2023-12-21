@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   BitcoinExchange.cpp                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
+/*   By: rlouvrie <rlouvrie@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:58:49 by romain            #+#    #+#             */
-/*   Updated: 2023/12/21 13:28:26 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/21 17:30:42 by rlouvrie         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -211,12 +211,16 @@ void	BitcoinExchange::exchange(std::string const &line) {
 			<< line
 			<< std::endl;
 	} else {
+		double rate1 = this->getClosestRate(date);
+		if (rate1 == -1) {
+			return ;
+		}
 		std::cout
 			<< date
 			<< " => "
 			<< value
 			<< " = "
-			<< getClosestRate(date) * value
+			<< rate1 * value
 			<< std::endl;
 	}
 }
@@ -232,7 +236,12 @@ double	BitcoinExchange::getClosestRate(std::string &date) {
             return rit->second;
         }
     }
-	return (0);
+	std::cerr
+		<< "Error: cannot find lower date close to "
+		<< date
+		<< " in database."
+		<< std::endl;
+	return (-1);
 }
 
 /* ************************************************************************** */
