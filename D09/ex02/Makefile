@@ -6,7 +6,7 @@
 #    By: romain <romain@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/12/18 11:48:59 by romain            #+#    #+#              #
-#    Updated: 2023/12/21 11:19:45 by romain           ###   ########.fr        #
+#    Updated: 2023/12/21 11:34:05 by romain           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,7 +19,7 @@ CPP_FLAGS = -Wall -Werror -Wextra
 CPP_VERSION = -std=c++98
 
 SRCS =	main.cpp	\
-		BitcoinExchange.cpp
+		PmergeMe.cpp
 
 OBJS := ${SRCS:.cpp=.o}
 

@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/21 11:26:47 by romain            #+#    #+#             */
-/*   Updated: 2023/12/21 11:32:53 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/21 11:41:52 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ int	main(int argc, char **argv) {
 		return (0);
 	}
 	try {
-		PmergeMe	sort(&argv[1]);
+		PmergeMe	sort(argc - 1, &argv[1]);
 	} catch (std::exception &e) {
 		std::cout
 			<< "Error: "
