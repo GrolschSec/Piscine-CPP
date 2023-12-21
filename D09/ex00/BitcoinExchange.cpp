@@ -6,7 +6,7 @@
 /*   By: romain <romain@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/18 11:58:49 by romain            #+#    #+#             */
-/*   Updated: 2023/12/20 21:26:59 by romain           ###   ########.fr       */
+/*   Updated: 2023/12/21 13:28:26 by romain           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,9 +36,15 @@ BitcoinExchange::BitcoinExchange(void) {
 			&& (iss.peek() == EOF || iss.peek() == '\n') 
 			&& verifyDate(date)
 			&& rate >= 0
-			&& rate <= std::numeric_limits<int>::max()) {
+			&& rate <= std::numeric_limits<int>::max()
+			&& std::isdigit(line[11])) {
 			this->_db[date] = rate;
-		}
+		} /*else {
+			std::cerr
+				<< "DB Error: invalid syntax "
+				<< line
+				<< std::endl;
+		}*/
 	}
 	file.close();
 	if (this->_db.empty()) {
